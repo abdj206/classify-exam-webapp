@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import sgMail from '@sendgrid/mail'
 import { google } from 'googleapis'
 import path from "path";
 const TURNSTILE_SECRET_KEY = process.env.TURNSTILE_SECRET_KEY
+import fs from 'fs';
+
 
 interface DemoRequestData {
   name: string
@@ -76,23 +78,25 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: false, error: 'MISSING_FIELDS', missingFields }, { status: 400 })
     }
 
-    const requiredEnv = ['DEMO_REQUEST_TO_EMAIL', 'SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS']
+    const requiredEnv = ['DEMO_REQUEST_TO_EMAIL', 'SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'SENDGRID_API_KEY']
     const missingEnv = requiredEnv.filter((key) => !process.env[key])
     if (missingEnv.length > 0) {
       console.error('Missing environment variables:', missingEnv)
       return NextResponse.json({ success: false, error: 'SERVER_MISCONFIGURED' }, { status: 500 })
     }
 
-    const smtpPort = Number(process.env.SMTP_PORT || 587)
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: smtpPort,
-      secure: smtpPort === 465,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
+
+    // const smtpPort = Number(process.env.SMTP_PORT || 587)
+    // const transporter = nodemailer.createTransport({
+    //   host: process.env.SMTP_HOST,
+    //   port: smtpPort,
+    //   secure: smtpPort === 465,
+    //   auth: {
+    //     user: process.env.SMTP_USER,
+    //     pass: process.env.SMTP_PASS,
+    //   },
+    // })
 
     const adminHtml = `
       <h2>New Demo Request</h2>
@@ -106,9 +110,9 @@ export async function POST(request: NextRequest) {
       <p><strong>Wants updates:</strong> ${payload.wantsUpdates ? 'Yes' : 'No'}</p>
     `
 
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: process.env.DEMO_REQUEST_TO_EMAIL,
+    await sgMail.send({
+      to: process.env.DEMO_REQUEST_TO_EMAIL!,
+      from: process.env.SMTP_USER!,
       subject: `New Demo Request from ${payload.name} - ${payload.institution}`,
       html: adminHtml,
     })
@@ -275,7 +279,7 @@ export async function POST(request: NextRequest) {
                 </p>
                 <p style="margin:8px 0 0 0;font-size:11px;color:#6b7280;line-height:1.5;">
                   If you didn’t request this email, you can
-                  <a href="mailto:support@classify.com?subject=Report%20unauthorized%20Classify%20email"
+                  <a href="mailto:support@classifyservices.com?subject=Report%20unauthorized%20Classify%20email"
                      style="color:#60a5fa;text-decoration:underline;">
                     report it here
                   </a>
@@ -291,20 +295,32 @@ export async function POST(request: NextRequest) {
   </body>
 </html>
 `;
+const filePath = path.join(process.cwd(), 'public', 'images', 'classify-logo.png');
 
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
+// Read the file content and convert it to base64 (this is already correct)
+const fileContent = fs.readFileSync(filePath, { encoding: 'base64' });
+
+    await sgMail.send({
+      from: process.env.SMTP_USER!,
       to: payload.email,
       subject: 'Your Classify AI demo access - getting started',
       html: userHtml,
       attachments: [
         {
           filename: 'classify-logo.png',
-          path: path.join(process.cwd(), 'public', 'images', 'classify-logo.png'),
-          cid: 'classify-logo',
+          content: fileContent,
+          type: 'image/png',
+          // disposition: 'inline',
+          // content_id: 'classify-logo',
         },
       ],
+    }).then((response) => {
+      console.log('Email sent successfully!', response);
     })
+    .catch((error) => {
+      console.error('Error sending email:', error);
+      console.error('Error response body:', error.response?.body);
+    });
 
     try {
       const sheetId = process.env.GOOGLE_SHEET_ID

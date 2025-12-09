@@ -1,7 +1,6 @@
-// app/api/send-LOI/route.ts
 
 import { verifySignatureAppRouter } from '@upstash/qstash/nextjs'
-import nodemailer from 'nodemailer'
+import sgMail from '@sendgrid/mail'  // Import SendGrid
 import { generateLetterOfIntentPdf } from '@/lib/generateLetterOfIntentPdf'
 
 interface SendLoiJobPayload {
@@ -87,7 +86,7 @@ function buildEvaluationPackageEmailHtml(args: {
           ${developerName}<br/>
           <span style="color:#9ca3af;">${developerTitle ?? ''}</span><br/>
           <span style="color:#9ca3af;">Classify Solutions</span><br/>
-          <a href="mailto:exam.mgmt.edu@gmail.com" style="color:#60a5fa;text-decoration:none;">exam.mgmt.edu@gmail.com</a>
+          <a href="mailto:sales@classifyservices.com" style="color:#60a5fa;text-decoration:none;">sales@classifyservices.com</a>
         </p>
 
       </div>
@@ -98,7 +97,7 @@ function buildEvaluationPackageEmailHtml(args: {
     </div>
   </body>
 </html>
-`
+`;
 }
 
 async function handler(req: Request) {
@@ -136,18 +135,10 @@ async function handler(req: Request) {
       issueDate: issueDateStr,
     })
 
-    // 2) Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT ?? 587),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
+    // 2) Initialize SendGrid
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!)  // Set SendGrid API key
 
-    // 3) Build email HTML
+    // 3) Build email HTML content
     const html = buildEvaluationPackageEmailHtml({
       contactName,
       institutionName,
@@ -156,24 +147,29 @@ async function handler(req: Request) {
       developerTitle,
     })
 
-    // 4) Send email with PDF attached
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
-      to: process.env.SMTP_USER,
+    // 4) Send email using SendGrid with PDF attached
+    await sgMail.send({
+      from: process.env.SMTP_USER!,
+      to: process.env.SMTP_USER!,
       subject: `Your Classify AI evaluation package for ${institutionName}`,
       html,
       attachments: [
         {
-          filename: `Classify-LOI-${institutionName}.pdf`,
-          content: pdfBuffer,
+          filename: `Classify-LOI-${institutionName}.pdf`,  // Ensure filename is provided
+          content: pdfBuffer.toString('base64'),  // Convert buffer to base64
+          type: 'application/pdf',  // Ensure correct MIME type
+          disposition: 'attachment',
         },
         {
-          content: contactEmail,
+          filename: 'contact-email.txt',  // Add a dummy filename to avoid error
+          content: contactEmail,  // Attach the contact email as a string
+          type: 'text/plain',  // Use text/plain MIME type for this attachment
+          disposition: 'inline',
         }
       ],
     })
 
-    return Response.json({ ok: true })
+    return new Response(JSON.stringify({ ok: true }), { status: 200 })
   } catch (error) {
     console.error('send-LOI error:', error)
     return new Response('Internal Server Error', { status: 500 })

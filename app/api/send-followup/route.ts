@@ -1,6 +1,6 @@
 // app/api/send-followup/route.ts
 //import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import sgMail from '@sendgrid/mail'
 import { verifySignatureAppRouter } from '@upstash/qstash/nextjs'
 
 interface FollowupPayload {
@@ -21,16 +21,10 @@ async function handler(req: Request) {
   const { schoolName, contactName, contactEmail, pricing } = body
   const { semester, month, year } = pricing
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT ?? 587),
-    secure: false,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  })
+  // Set the SendGrid API key
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY!)
 
+  // Build the follow-up email HTML content
   function buildFollowupEmailHtml(args: {
     contactName: string
     schoolName: string
@@ -58,7 +52,10 @@ async function handler(req: Request) {
           I hope you're doing well. This is just a quick check-in in case you need anything from our side while reviewing the material we shared. 
           Every institution has its own internal steps when exploring new academic technologies, so we’re here to support you at whatever pace works best for ${schoolName}.
         </p>
-
+        <p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
+          By the way ${args.contactName}, we are offering a <strong>lifetime discounted rate of 50%</strong> and more support especially during the upcoming exam sessions.
+          You can contact us at <a href="mailto:sales@classifyservices.com" style="color:#60a5fa;text-decoration:none;">sales@classifyservices.com</a> to discuss about your needs.
+        </p>
         <p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
           If you have any questions about how Classify AI fits into your exam workflow, how to test certain features inside the demo, 
           or anything related to the Letter of Intent, feel free to reach out — we’re glad to help.
@@ -88,24 +85,30 @@ async function handler(req: Request) {
 </html>
 `
   }
-  
 
-  await transporter.sendMail({
-    from: process.env.SMTP_USER,
-    to: contactEmail,
-    bcc: process.env.SMTP_USER,
-    subject: `Any questions about your Classify AI quote for ${schoolName}?`,
-    html: buildFollowupEmailHtml({
-      contactName,
-      schoolName,
-      semester,
-      month,
-      year,
-      contactEmail
-    }),
-  })
+  // Send email using SendGrid
+  try {
+    await sgMail.send({
+      from: process.env.SMTP_USER!,  // Your SendGrid email address
+      to: contactEmail,
+      bcc: process.env.SMTP_USER!,  // Optional: send a copy to yourself
+      subject: `Any questions about your Classify AI quote for ${schoolName}?`,
+      html: buildFollowupEmailHtml({
+        contactName,
+        schoolName,
+        semester,
+        month,
+        year,
+        contactEmail
+      }),
+    })
 
-  return Response.json({ ok: true })
+    return Response.json({ ok: true })
+  } catch (error) {
+    console.error('Error sending follow-up email:', error)
+    return new Response('Internal Server Error', { status: 500 })
+  }
 }
 
+// QStash verifies the request and then calls handler
 export const POST = verifySignatureAppRouter(handler)

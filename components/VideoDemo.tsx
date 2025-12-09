@@ -67,7 +67,7 @@ export default function VideoDemo() {
               <Cal/>
               <button
                 onClick={() => {
-                  window.location.href = 'mailto:exam.mgmt.edu@gmail.com?subject=Question about Classify Solutions'
+                  window.location.href = 'mailto:info@classifyservices.com?subject=Question about Classify Solutions'
                 }}
                 className="w-full px-6 py-3 border-2 border-classify-blue text-classify-blue rounded-lg hover:bg-classify-blue hover:text-white transition-colors font-medium"
               >

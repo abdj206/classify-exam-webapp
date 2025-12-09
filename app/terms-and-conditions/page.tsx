@@ -454,7 +454,7 @@ export default function TermsPage() {
                   you may submit a notice under the Digital Millennium Copyright Act (DMCA) by
                   emailing:
                 </p>
-                <p className="font-semibold text-amber-200">exam.mgmt.edu@gmail.com</p>
+                <p className="font-semibold text-amber-200">terms@classifyservices.com</p>
                 <p>
                   Please include the following information in your notice (to the extent required by
                   law):
@@ -578,7 +578,7 @@ export default function TermsPage() {
                 <p className="font-semibold text-slate-100">Questions?</p>
                 <p>
                   If you have any questions about these Terms &amp; Conditions, you can contact us at:{' '}
-                  <span className="font-semibold text-amber-200">exam.mgmt.edu@gmail.com</span>
+                  <span className="font-semibold text-amber-200">terms@classifyservices.com</span>
                 </p>
               </div>
             </article>

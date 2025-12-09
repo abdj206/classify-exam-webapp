@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react'
 import { Turnstile } from '@marsidev/react-turnstile'
 
+
+
 const LOADING_MESSAGES = [
   'Connecting to Classify servers…',
   'Encrypting your demo request…',
@@ -152,7 +154,8 @@ export default function DemoModal() {
         },
         body: JSON.stringify({ ...formData, turnstileToken }),
       })
-
+      console.log("response.ok:",response.ok)
+      console.log("response.status:",response.status)
       const payload = await response.json()
       if (!response.ok || !payload?.success) {
         setStatus('error')
@@ -183,7 +186,7 @@ export default function DemoModal() {
 
   if (!isOpen) return null
 
-  return (
+  return ( 
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur"
       onClick={closeModal}
@@ -192,6 +195,27 @@ export default function DemoModal() {
         className="bg-slate-950 text-slate-50 rounded-3xl shadow-[0_40px_120px_rgba(2,6,23,0.85)] border border-slate-800/80 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
+        {status === 'success' ? (
+    <div className="flex flex-col items-center gap-4 py-10 text-center">
+      <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 border border-emerald-400/60 shadow-lg shadow-emerald-500/30 animate-pulse">
+        <span className="text-3xl">✨</span>
+      </div>
+      <h3 className="text-2xl font-semibold text-slate-50">
+        Demo request sent!
+      </h3>
+      <p className="text-slate-300 max-w-md">
+        Thank you for your interest in Classify. We’ve registered your demo request and will
+        reach out soon with your demo access!
+      </p>
+      <button
+        type="button"
+        onClick={closeModal}
+        className="mt-4 rounded-full bg-slate-50 px-6 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200 transition-colors"
+      >
+        Close
+      </button>
+    </div>
+  ) : (
         <div className="p-6 md:p-8">
           {/* Header */}
           <div className="flex items-center justify-between mb-6">
@@ -223,33 +247,6 @@ export default function DemoModal() {
           </div>
 
           {/* Content */}
-          {status === 'success' ? (
-            <div className="flex flex-col items-center gap-4 py-10 text-center">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 border border-emerald-400/60 shadow-lg shadow-emerald-500/30 animate-pulse">
-                <span className="text-3xl">✨</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-50">
-                Demo request sent!
-              </h3>
-              <p className="text-slate-300 max-w-md">
-                Thank you for your interest in Classify. We’ve registered your demo request and will
-                reach out soon with your demo access!
-              </p>
-              <button
-                type="button"
-                onClick={closeModal}
-                className="mt-4 rounded-full bg-slate-50 px-6 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-200 transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {errorMessage && (
-                <p className="text-sm text-rose-400 bg-rose-500/10 border border-rose-400/40 rounded-lg px-4 py-3">
-                  {errorMessage}
-                </p>
-              )}
 
               {/* Fields (unchanged) */}
               {/* Name */}
@@ -402,6 +399,13 @@ export default function DemoModal() {
                 />
               </div>
 
+          
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {errorMessage && (
+                <p className="text-sm text-rose-400 bg-rose-500/10 border border-rose-400/40 rounded-lg px-4 py-3">
+                  {errorMessage}
+                </p>
+              )}
               {/* Submit button with PS4-style loader */}
               <button
                 type="submit"
@@ -438,12 +442,15 @@ export default function DemoModal() {
                   <p className="text-center text-[10px] text-slate-500">
                     Please don&apos;t close this window – your secure demo link is being prepared…
                   </p>
+                  <p className="text-center text-[15px] text-slate-500">
+                    This might take a couple of minutes to prepare your demo space
+                  </p>
+                  <p className="text-center text-[15px] text-slate-500">
+                  If it takes more than 2 minutes, close this window and try again or contact us directly
+                  </p>
                 </div>
               )}
             </form>
-          )}
-        </div>
+        </div>)}
       </div>
-    </div>
-  )
-}
+    </div>)}

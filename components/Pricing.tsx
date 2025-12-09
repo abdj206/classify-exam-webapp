@@ -100,7 +100,7 @@ export default function Pricing() {
             <div
               key={tier.name}
               className={`bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-classify-teal hover:shadow-xl transition-all ${tier.contactUs ? 'cursor-pointer' : ''}`}
-              onClick={tier.contactUs ? () => window.location.href = 'mailto:exam.mgmt.edu@gmail.com' : undefined}
+              onClick={tier.contactUs ? () => window.location.href = 'mailto:info@classifyservices.com' : undefined}
             >
               <h3 className="text-xl font-bold text-classify-blue mb-2">{tier.name}</h3>
               <p className="text-sm text-gray-600 mb-4">{tier.range}</p>
@@ -192,7 +192,7 @@ export default function Pricing() {
         {/* Fair pricing note */}
         <div className="max-w-4xl mx-auto bg-classify-gold/10 border-l-4 border-classify-gold p-6 rounded-lg mb-8">
           <p className="text-lg font-semibold text-classify-blue">
-            If you slightly exceed your tier (e.g. 550 students), don&apos;t worry — we can negotiate a fair plan together, with no hidden extra fees. Drop us an email at <a href="mailto:exam.mgmt.edu@gmail.com" className="text-classify-blue underline">exam.mgmt.edu@gmail.com</a> to discuss about your needs.
+            If you slightly exceed your tier (e.g. 550 students), don&apos;t worry — we can negotiate a fair plan together, with no hidden extra fees. Drop us an email at <a href="mailto:sales@classifyservices.com" className="text-classify-blue underline">sales@classifyservices.com</a> to discuss about your needs.
           </p>
         </div>
 

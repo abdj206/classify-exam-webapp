@@ -247,7 +247,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 To exercise any of these rights, please contact us at{' '}
                 <span className="font-semibold text-amber-200">
-                  exam.mgmt.edu@gmail.com
+                  privacy@classifyservices.com
                 </span>
                 .
               </p>
@@ -339,7 +339,7 @@ export default function PrivacyPolicyPage() {
               <p>
                 For privacy questions, access requests, or deletion requests, you can contact us at:
               </p>
-              <p className="font-semibold text-amber-200">exam.mgmt.edu@gmail.com</p>
+              <p className="font-semibold text-amber-200">privacy@classifyservices.com</p>
               <p>
                 If you are located in the European Union or another region with dedicated data
                 protection authorities, you may also have the right to file a complaint with your

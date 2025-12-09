@@ -358,7 +358,7 @@ export default function QuoteModal() {
           onClick={closeModal}
         >
           <div
-            className="bg-slate-950 text-slate-50 rounded-3xl shadow-[0_40px_120px_rgba(2,6,23,0.85)] border border-slate-800/80 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            className="bg-slate-950 text-slate-50 rounded-3xl shadow-[0_40px_120px_rgba(2,6,23,0.85)] border border-slate-800/80 max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-6 md:p-8">
@@ -402,7 +402,7 @@ export default function QuoteModal() {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-6 px-4 py-6">
                   {errorMessage && (
                     <p className="text-sm text-rose-400 bg-rose-500/10 border border-rose-400/40 rounded-lg px-4 py-3">
                       {errorMessage}
@@ -421,7 +421,7 @@ export default function QuoteModal() {
                       value={formData.schoolName}
                       onChange={handleChange}
                       disabled={status === 'submitting'}
-                      className="w-full px-4 py-2 border border-slate-700 rounded-lg bg-slate-900 text-slate-100 focus:ring-2 focus:ring-amber-300 focus:border-transparent disabled:opacity-60"
+                      className="w-full px-4 py-2 border border-slate-700 rounded-lg bg-slate-900 text-slate-100 focus:ring-2 focus:ring-amber-300 focus:border-transparent disabled:opacity-60 mb-4"
                     />
                   </div>
 

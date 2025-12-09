@@ -1,6 +1,7 @@
 // app/api/request-quote/route.ts
+
 import { NextRequest, NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import sgMail from '@sendgrid/mail'  // Import SendGrid
 import { qstashClient } from '../../../lib/qstash'
 import { calculateFullPricing, getZetaForCountry, SchoolSize } from '../../../lib/pricing'
 import { mapSchoolSizeToCapacity } from '@/lib/mapSchoolSizeToCapacity'
@@ -262,9 +263,6 @@ const ISO2_TO_COUNTRY: Record<string, string> = {
   ZW: 'Zimbabwe',
 }
 
-/**
- * Recommended: detect country from hosting/CDN headers.
- */
 function detectCountryFromRequest(req: NextRequest): string {
   const vercelCode = req.headers.get('x-vercel-ip-country')
   const cfCode = req.headers.get('cf-ipcountry')
@@ -321,22 +319,14 @@ export async function POST(req: NextRequest) {
 
     const { semester, month, year } = calculateFullPricing(schoolSize, zeta)
 
-    // Setup Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: Number(process.env.SMTP_PORT ?? 587),
-      secure: false,
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    })
+    // Setup SendGrid transporter
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY!)  // Set the SendGrid API key
 
     // 1) Confirmation email (always)
-    await transporter.sendMail({
-      from: process.env.SMTP_USER,
+    await sgMail.send({
+      from: process.env.SMTP_USER!,
       to: contactEmail,
-      bcc: process.env.SMTP_USER,
+      bcc: process.env.SMTP_USER!,
       subject: 'We’ve received your Classify quote request',
       html: buildConfirmationEmailHtml({
         contactName,
@@ -348,9 +338,9 @@ export async function POST(req: NextRequest) {
 
     // 2) Special case: Very Large / University => internal email only, no auto quote
     if (schoolSize === 'very-large') {
-      await transporter.sendMail({
-        from: process.env.SMTP_USER,
-        to: process.env.SMTP_USER,
+      await sgMail.send({
+        from: process.env.SMTP_USER!,
+        to: process.env.SMTP_USER!,
         subject: `New Very Large / Uni quote request – ${schoolName}`,
         text: buildInternalVeryLargeText({
           schoolName,
@@ -381,8 +371,8 @@ export async function POST(req: NextRequest) {
 
       // random 5–10 minutes delay in seconds
       const randomMinutes = 5 + Math.floor(Math.random() * 6) // 5..10
-      const quoteDelaySeconds = randomMinutes * 60
-      const followupDelaySeconds = 48 * 60 * 60
+      const quoteDelaySeconds = randomMinutes
+      const followupDelaySeconds = 1 * 1 * 30
 
       const quotePayload = {
         schoolName,
@@ -396,13 +386,6 @@ export async function POST(req: NextRequest) {
         notes: notes || '',
         pricing: { semester, month, year, zeta },
       }
-
-      // Schedule custom quote email (PDF quote)
-      // await qstashClient.publishJSON({
-      //   url: `${baseUrl}/api/send-custom-quote`,
-      //   body: quotePayload,
-      //   delay: quoteDelaySeconds,
-      // })
 
       // Schedule follow-up email (48h later)
       await qstashClient.publishJSON({
@@ -486,19 +469,19 @@ function buildConfirmationEmailHtml(args: {
 
         <p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
           In the meantime, you may continue exploring the demo version of Classify AI. As every institution follows its own examination procedures and internal workflows, we always make sure that Classify AI adapts smoothly to your specific context.
-         </p> 
+        </p> 
 
-${args.notes ? `(<p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
-  For that purpose, we will take into consideration your specified comments : <div>${args.notes}</div>
-  </p>)` : ''} <p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;"> If your school follows particular steps for preparing timetables, attendance lists, envelopes, invigilation schedules, or any unique academic process, feel free to share whatever you think is important to make this work best for you </p>
+        ${args.notes ? `<p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
+          For that purpose, we will take into consideration your specified comments: <div>${args.notes}</div>
+        </p>` : ''}
 
-<p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
-Our team will use this information to guide you more effectively during your evaluation period, and to ensure the platform aligns with how your institution already operates.
+        <p style="margin:0 0 12px 0;font-size:14px;color:#d1d5db;">
+          Our team will use this information to guide you more effectively during your evaluation period, and to ensure the platform aligns with how your institution already operates.
         </p>
 
         <p style="margin:16px 0 0 0;font-size:13px;color:#9ca3af;">
           If you have any questions or would like to schedule a call, simply reply to this email or contact us at 
-          <a href="mailto:exam.mgmt.edu@gmail.com" style="color:#60a5fa;">exam.mgmt.edu@gmail.com</a>.
+          <a href="mailto:demo@classifyservices.com" style="color:#60a5fa;">demo@classifyservices.com</a>.
         </p>
 
       </div>
@@ -508,8 +491,8 @@ Our team will use this information to guide you more effectively during your eva
       </p>
     </div>
   </body>
-</html>
-`
+  </html>
+  `
 }
 
 function buildInternalVeryLargeText(args: {
