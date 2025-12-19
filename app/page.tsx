@@ -1,3 +1,5 @@
+'use client'
+
 import Navigation from '@/components/Navigation'
 import Hero from '@/components/Hero'
 import BeforeAfter from '@/components/BeforeAfter'
@@ -18,6 +20,7 @@ export default function Home() {
       <BeforeAfter />
       <Features />
       <HowItWorks />
+      <div id="how-it-works__after" className="h-px w-full" />
       {/*<Pricing />*/}
       <CountdownTimer/>
       <FAQ />
