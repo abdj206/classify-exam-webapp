@@ -2,9 +2,9 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import sgMail from '@sendgrid/mail'  // Import SendGrid
-import { qstashClient } from '../../../lib/qstash'
+// import { qstashClient } from '../../../lib/qstash'
 import { calculateFullPricing, getZetaForCountry, SchoolSize } from '../../../lib/pricing'
-import { mapSchoolSizeToCapacity } from '@/lib/mapSchoolSizeToCapacity'
+// import { mapSchoolSizeToCapacity } from '@/lib/mapSchoolSizeToCapacity'
 
 const ISO2_TO_COUNTRY: Record<string, string> = {
   // A
@@ -337,12 +337,12 @@ export async function POST(req: NextRequest) {
     })
 
     // 2) Special case: Very Large / University => internal email only, no auto quote
-    if (schoolSize === 'very-large') {
+    if (schoolSize) {
       await sgMail.send({
         from: process.env.SMTP_USER!,
         to: process.env.SMTP_USER!,
-        subject: `New Very Large / Uni quote request – ${schoolName}`,
-        text: buildInternalVeryLargeText({
+        subject: `New quote request – ${schoolName}`,
+        text: buildInternalText({
           schoolName,
           country,
           detectedCountry,
@@ -370,50 +370,50 @@ export async function POST(req: NextRequest) {
       }
 
       // random 5–10 minutes delay in seconds
-      const randomMinutes = 5 + Math.floor(Math.random() * 6) // 5..10
-      const quoteDelaySeconds = randomMinutes
-      const followupDelaySeconds = 1 * 1 * 30
+      // const randomMinutes = 5 + Math.floor(Math.random() * 6) // 5..10
+      // const quoteDelaySeconds = randomMinutes
+      // const followupDelaySeconds = 1 * 1 * 30
 
-      const quotePayload = {
-        schoolName,
-        schoolSize,
-        contactName,
-        contactEmail,
-        phone: phone || '',
-        country,
-        detectedCountry,
-        examsPerYear,
-        notes: notes || '',
-        pricing: { semester, month, year, zeta },
-      }
+      // const quotePayload = {
+      //   schoolName,
+      //   schoolSize,
+      //   contactName,
+      //   contactEmail,
+      //   phone: phone || '',
+      //   country,
+      //   detectedCountry,
+      //   examsPerYear,
+      //   notes: notes || '',
+      //   pricing: { semester, month, year, zeta },
+      // }
 
       // Schedule follow-up email (48h later)
-      await qstashClient.publishJSON({
-        url: `${baseUrl}/api/send-followup`,
-        body: quotePayload,
-        delay: followupDelaySeconds,
-      })
+      // await qstashClient.publishJSON({
+      //   url: `${baseUrl}/api/send-followup`,
+      //   body: quotePayload,
+      //   delay: followupDelaySeconds,
+      // })
 
-      // Build LOI payload (evaluation package email)
-      const capacity = mapSchoolSizeToCapacity(schoolSize)
+      // // Build LOI payload (evaluation package email)
+      // const capacity = mapSchoolSizeToCapacity(schoolSize)
 
-      const loiPayload = {
-        institutionName: schoolName,
-        contactName,
-        contactEmail,
-        country,
-        capacityLabel: capacity,
-        maxStudentsText: capacity,
-        developerName: 'Abderrahmen', // <-- put your real name
-        developerTitle: 'Founder & Developer',
-      }
+      // const loiPayload = {
+      //   institutionName: schoolName,
+      //   contactName,
+      //   contactEmail,
+      //   country,
+      //   capacityLabel: capacity,
+      //   maxStudentsText: capacity,
+      //   developerName: 'Abderrahmen', // <-- put your real name
+      //   developerTitle: 'Founder & Developer',
+      // }
 
-      // Schedule LOI email (you can add delay if you want)
-      await qstashClient.publishJSON({
-        url: `${baseUrl}/api/send-LOI`,
-        body: loiPayload,
-        delay: quoteDelaySeconds, // uncomment if you want it also delayed
-      })
+      // // Schedule LOI email (you can add delay if you want)
+      // await qstashClient.publishJSON({
+      //   url: `${baseUrl}/api/send-LOI`,
+      //   body: loiPayload,
+      //   delay: quoteDelaySeconds, // uncomment if you want it also delayed
+      // })
     }
 
     return NextResponse.json({ success: true })
@@ -495,7 +495,7 @@ function buildConfirmationEmailHtml(args: {
   `
 }
 
-function buildInternalVeryLargeText(args: {
+function buildInternalText(args: {
   schoolName: string
   country: string
   detectedCountry: string
@@ -507,12 +507,12 @@ function buildInternalVeryLargeText(args: {
   notes?: string
 }) {
   return `
-New Very Large / University quote request:
+New quote request:
 
 School: ${args.schoolName}
 Reported country: ${args.country}
 Detected country (for pricing): ${args.detectedCountry || 'N/A'}
-Size: 3000+ (Very Large / Uni)
+Size: ${args.schoolSize}
 Exams per year: ${args.examsPerYear}
 
 Contact:

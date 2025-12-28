@@ -6,12 +6,13 @@ import { Turnstile } from '@marsidev/react-turnstile'
 
 
 const LOADING_MESSAGES = [
-  'Connecting to Classify servers…',
   'Encrypting your demo request…',
-  'Spinning up your AI exam space…',
-  'Preparing your Google Sheet template…',
-  'Linking web app and sheet…',
-  'Finalizing secure access…',
+  'Verifying your email...',
+  'Connecting to Classify servers…'
+  // 'Spinning up your AI exam space…',
+  // 'Preparing your Google Sheet template…',
+  // 'Linking web app and sheet…',
+  // 'Finalizing secure access…',
 ]
 
 interface FormData {
@@ -195,7 +196,7 @@ export default function DemoModal() {
         className="bg-slate-950 text-slate-50 rounded-3xl shadow-[0_40px_120px_rgba(2,6,23,0.85)] border border-slate-800/80 max-w-2xl w-full max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
-        {status === 'success' ? (
+        {status === 'success'  ? (
     <div className="flex flex-col items-center gap-4 py-10 text-center">
       <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/15 border border-emerald-400/60 shadow-lg shadow-emerald-500/30 animate-pulse">
         <span className="text-3xl">✨</span>
@@ -440,14 +441,14 @@ export default function DemoModal() {
                   </p>
 
                   <p className="text-center text-[10px] text-slate-500">
-                    Please don&apos;t close this window – your secure demo link is being prepared…
+                    Please don&apos;t close this window 
                   </p>
                   <p className="text-center text-[15px] text-slate-500">
-                    This might take a couple of minutes to prepare your demo space
+                    This might take a couple of minutes
                   </p>
-                  <p className="text-center text-[15px] text-slate-500">
-                  If it takes more than 2 minutes, close this window and try again or contact us directly
-                  </p>
+                  {/* <p className="text-center text-[15px] text-slate-500">
+                  If this takes more than 2 minutes, please 
+                  </p> */}
                 </div>
               )}
             </form>

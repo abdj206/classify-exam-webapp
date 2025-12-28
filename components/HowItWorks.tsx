@@ -89,7 +89,7 @@ export default function HowItWorks() {
           </p>
           <ul className="mt-3 list-disc list-inside text-sm text-gray-700 space-y-1">
             <li>Push events directly into <strong>Google Calendar</strong> for students and proctors</li>
-            <li>One-Click Create <strong>Google Forms</strong> for electronic attendance</li>
+            {/* <li>One-Click Create <strong>Google Forms</strong> for electronic attendance</li> */}
             <li>
               Export as Google Docs &amp; PDFs to <strong>Google Drive:</strong>
               <ul className="mt-1 ml-5 space-y-0.5 text-[13px] text-gray-600 list-[circle]">
@@ -180,5 +180,6 @@ export default function HowItWorks() {
         }
       `}</style>
     </section>
+    
   )
 }

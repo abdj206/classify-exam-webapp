@@ -106,12 +106,12 @@ export default function Features() {
                 <h4 className="text-xl font-bold text-classify-blue">Bonus #4 – Printable headers & envelopes</h4>
               </div>
               <p className="text-gray-700">
-                Auto-generate <strong>electronic attendance Google Form</strong>, <strong>PDF timetables</strong>, and <strong>printable header sheets & envelopes for exams</strong> to simplify on-the-day logistics.
+                Auto-generate {/*<strong>electronic attendance Google Form</strong>, */}<strong>PDF timetables</strong>, and <strong>printable header sheets & envelopes for exams</strong> to simplify on-the-day logistics.
               </p>
             </div>
 
             {/* Bonus #5 */}
-            <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors md:col-span-2 lg:col-span-1">
+            {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors md:col-span-2 lg:col-span-1">
               <div className="flex items-center mb-4">
                 <span className="bg-classify-teal text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
                   5
@@ -121,8 +121,8 @@ export default function Features() {
               <p className="text-gray-700">
               One click automatically sends instructors a complete and clean attendance list for all their classes once the exam session is over.
               </p>
-            </div>
-            <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors md:col-span-2 lg:col-span-1">
+            </div> */}
+            {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors md:col-span-2 lg:col-span-1">
   <div className="flex items-center mb-4">
     <span className="bg-classify-teal text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
       6
@@ -135,7 +135,7 @@ export default function Features() {
   Automatic attendance report statistics — General, by class, course, instructor, 
   and exam session — helping you spot patterns and flag issues early in just one click.
   </p>
-</div>
+</div> */}
 
           </div>
         </div>
