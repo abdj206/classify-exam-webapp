@@ -160,7 +160,7 @@ Important : Schools who join during the early-access phase (before January 1<sup
       answer: (
         <>
           Yes. Once generated, the schedule can be shared with <strong>proctors</strong> and{' '}
-          <strong>students</strong> through <strong>Google Calendar</strong> and{' '}
+          <strong>students</strong> through <strong>Google Calendar</strong> (only for Google Workspace users) and{' '}
           <strong>PDF exports</strong>. You stay in full control of who receives what.
         </>
       ),
