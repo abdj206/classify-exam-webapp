@@ -128,27 +128,7 @@ export default function PrivacyPolicyPage() {
                 </li>
                 <li>
                   <code className="rounded bg-slate-900 px-1.5 py-0.5 text-[0.75rem] text-amber-200">
-                    https://www.googleapis.com/auth/drive.file
-                  </code>
-                </li>
-                <li>
-                  <code className="rounded bg-slate-900 px-1.5 py-0.5 text-[0.75rem] text-amber-200">
-                    https://www.googleapis.com/auth/drive.readonly
-                  </code>
-                </li>
-                <li>
-                  <code className="rounded bg-slate-900 px-1.5 py-0.5 text-[0.75rem] text-amber-200">
-                    https://www.googleapis.com/auth/script.send_mail
-                  </code>
-                </li>
-                <li>
-                  <code className="rounded bg-slate-900 px-1.5 py-0.5 text-[0.75rem] text-amber-200">
                     https://www.googleapis.com/auth/script.external_request
-                  </code>
-                </li>
-                <li>
-                  <code className="rounded bg-slate-900 px-1.5 py-0.5 text-[0.75rem] text-amber-200">
-                    https://www.googleapis.com/auth/drive
                   </code>
                 </li>
                 <li>
