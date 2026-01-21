@@ -496,13 +496,7 @@ export default function TermsPage() {
               <SectionTitle number="19" title="Governing Law" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  These Terms are governed by and construed in accordance with the laws of the State
-                  of California, USA, without regard to its conflict-of-laws principles.
-                </p>
-                <p>
-                  This governing law clause applies to the maximum extent permitted by applicable law.
-                  Users located in jurisdictions with mandatory consumer protection or data protection
-                  rights will retain any non-waivable rights granted to them under those laws.
+                  These Terms are governed by the laws of the <strong>United Arab Emirates</strong>. Any disputes shall be  resolved through binding arbitration in Dubai, UAE, under the rules of the <strong>Dubai International Arbitration Centre</strong> except where applicable consumer protection laws require a different forum.
                 </p>
               </div>
   
@@ -511,9 +505,8 @@ export default function TermsPage() {
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
                   Any dispute, claim, or controversy arising out of or relating to these Terms or the
-                  Service shall be brought exclusively in the state or federal courts located in
-                  California, USA, unless applicable law requires a different forum.
-                </p>
+                  Service shall be brought exclusively in the courts located in the United Arab Emirates, unless applicable law requires a different forum.
+                   </p>
               </div>
   
               {/* 21 */}

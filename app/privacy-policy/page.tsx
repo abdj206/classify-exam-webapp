@@ -354,10 +354,7 @@ export default function PrivacyPolicyPage() {
             <SectionTitle number="14" title="Governing Law" />
             <div className="space-y-3 text-sm leading-relaxed text-slate-200">
               <p>
-                This Privacy Policy is governed by the laws of the State of California, USA, without
-                regard to conflict of law principles. Any disputes arising from this policy will be
-                subject to the exclusive jurisdiction of the courts located in California, unless
-                applicable law requires a different forum.
+                This Privacy Policy is governed by the laws of the <strong>United Arab Emirates</strong>. Any disputes shall be  resolved through binding arbitration in Dubai, UAE, under the rules of the <strong>Dubai International Arbitration Centre</strong> except where applicable consumer protection or data protection laws require a different forum.
               </p>
             </div>
           </article>
