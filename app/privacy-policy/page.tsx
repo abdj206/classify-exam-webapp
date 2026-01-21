@@ -140,7 +140,7 @@ export default function PrivacyPolicyPage() {
               </ul>
               <p>
                 These scopes are used only to operate the features you trigger, such as reading and
-                writing to Sheets and generating documents.
+                writing to Sheets and generating documents and also to access the Google Workspace UI to perform actions.
               </p>
               <p className="font-semibold text-amber-200">
                 We never use these permissions to transmit your internal exam data to our own
