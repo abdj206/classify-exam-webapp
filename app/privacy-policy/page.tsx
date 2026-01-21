@@ -131,13 +131,6 @@ export default function PrivacyPolicyPage() {
                     https://www.googleapis.com/auth/script.external_request
                   </code>
                 </li>
-                <li>
-                  <code className="rounded bg-slate-900 px-1.5 py-0.5 text-[0.75rem] text-amber-200">
-
-    https://www.googleapis.com/auth/script.container.ui
-                 
-                  </code>
-                </li>
               </ul>
               <p>
                 These scopes are used only to operate the features you trigger, such as reading and
