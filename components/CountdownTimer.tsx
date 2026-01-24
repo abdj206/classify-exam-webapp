@@ -77,7 +77,7 @@ type Props = {
 }
 
 export default function CountdownTimer({
-  deadlineISO = '2026-01-31T00:00:00Z',
+  deadlineISO = '2026-02-31T00:00:00Z',
   triggerId = 'how-it-works',
   triggerOnce = true,
   triggerRatio = 0.1,

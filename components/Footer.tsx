@@ -70,17 +70,23 @@ export default function Footer() {
                 >
                   info@classifyservices.com
                 </a>
-              </li>
-              <li>
-                <a
-                  href="https://calendly.com/classify-solutions"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-classify-gold transition-colors"
-                >
-                  Book a call
-                </a>
-              </li>
+                </li>
+                <li>
+                  <a
+                    href="mailto:sales@classifyservices.com"
+                    className="text-gray-300 hover:text-classify-gold transition-colors"
+                  >
+                    sales@classifyservices.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="mailto:support@classifyservices.com"
+                    className="text-gray-300 hover:text-classify-gold transition-colors"
+                  >
+                    support@classifyservices.com
+                  </a>
+                </li>
             </ul>
           </div>
         </div>

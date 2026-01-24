@@ -22,7 +22,9 @@ export default function Home() {
       <HowItWorks />
       <div id="how-it-works__after" className="h-px w-full" />
       {/*<Pricing />*/}
-      <CountdownTimer/>
+      {Date.now() < new Date('2026-02-31T00:00:00Z').getTime() ? (
+        <CountdownTimer/>
+      ) : null}
       <FAQ />
       <QuoteModal/>
       <VideoDemo />

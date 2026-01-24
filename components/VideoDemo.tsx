@@ -52,7 +52,7 @@ export default function VideoDemo() {
               Got any questions?
             </h3>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Want to see how we can make this system work for your specific institution ? We&apos;re happy to walk you through your own context. 
+              Want to see how we can make this system work for your specific institution ? We&apos;re happy to walk you through your own context - no charge, no commitment.
             </p>
             <div className="space-y-4">
               {/* <button

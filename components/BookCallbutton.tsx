@@ -8,7 +8,7 @@ export default function Cal() {
     })();
   }, [])
   return <button data-cal-namespace="15min"
-    data-cal-link="abderrahmen-cal/15min"
+    data-cal-link="classify-8tjlce/15min"
     className="w-full px-6 py-3 bg-classify-gold text-classify-blue-dark rounded-lg hover:bg-classify-gold-light transition-colors font-bold"
 
     

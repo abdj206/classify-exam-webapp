@@ -48,7 +48,8 @@ export default function Hero() {
 
         {/* Sub-headline */}
         <div className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed">
-          <p>We believe organization should feel effortless — powered by intelligence, not effort.</p>
+          <p>FINALLY REVEALED: the first AI-powered exam scheduling tool for Google Sheets. No complex software, no expensive licenses, just a simple spreadsheet and a few clicks. 
+            </p><p>We believe organization should feel effortless, and high quality education as the primary focus.</p>
           <p>
             Exams should inspire learning, not stress. That&apos;s why our AI creates perfectly optimized exam timetables for your school — seamlessly integrated with Google Slides, Google
             Drive and Google Calendar, all within your Google Workspace.
