@@ -126,7 +126,7 @@ export default function FAQ() {
 
 For full access, pricing varies based on your institution’s size. To receive accurate information tailored to your needs, simply click <strong>“Get Custom Quote.”</strong> Our team will provide a personalized estimate and help you determine the best setup for your school.
 
-Important : Schools who join during the early-access phase (before January 1<sup>st</sup> 2026) receive a <strong>lifetime discounted rate of 50%</strong> and more support especially during the upcoming exam sessions.
+Important : Schools who join during the early-access phase (before 3rd of March) <sup>st</sup> 2026) receive a <strong>lifetime discounted rate of 50%</strong> and more support especially during the upcoming exam sessions.
         </>
       ),
     },

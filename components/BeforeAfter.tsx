@@ -55,7 +55,7 @@ export default function BeforeAfter() {
               <div className="flex items-start">
                 <span className="text-classify-teal mr-3 text-xl">✓</span>
                 <p className="text-gray-700">
-                  <strong>From 14 days of work down to ~2 hours</strong>
+                  <strong>~2 hours</strong> of total work time
                 </p>
               </div>
             </div>

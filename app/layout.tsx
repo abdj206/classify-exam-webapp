@@ -25,7 +25,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'Classify Solutions - AI-Powered Exam Scheduling',
+  title: 'Classify Services - AI-Powered Exam Scheduling',
   description: 'Transform exam organization from 14 days to 2 hours with AI-powered scheduling integrated with Google Workspace.',
 }
 

@@ -32,7 +32,7 @@ export default function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-6">
         {/* Badge */}
         <div className="inline-flex items-center rounded-full border border-amber-300/40 bg-amber-400/10 px-6 py-6 text-ms font-semibold text-amber-200 shadow-lg shadow-amber-500/10">
-          🔥 We&apos;ll save your team <span className="font-bold ml-1">around 15 days</span> — so your staff can focus on teaching, not admin.
+          🔥 We&apos;ll save your team <span className="font-bold ml-1">around 14 days</span> — so your staff can focus on teaching, not admin.
         </div>
 
         {/* Logo */}
@@ -42,27 +42,32 @@ export default function Hero() {
         />
 
         {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mt-2">
-          Smarter Scheduling for Smarter Schools
-        </h1>
+        <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+  Generate Perfect Exam Timetables{" "}
+  <span className="text-indigo-400 font-extrabold">
+    in under 2 hours*
+  </span>
+</h1>
 
         {/* Sub-headline */}
         <div className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed">
-          <p>FINALLY REVEALED: the first AI-powered exam scheduling tool for Google Sheets. No complex software, no expensive licenses, just a simple spreadsheet and a few clicks. 
+          <p>FINALLY REVEALED: The first AI-powered exam scheduling tool built for <span className="text-classify-gold font-extrabold">
+          Google Education Users
+  </span>. No complex software, just a simple spreadsheet and a few clicks. 
             </p><p>We believe organization should feel effortless, and high quality education as the primary focus.</p>
           <p>
-            Exams should inspire learning, not stress. That&apos;s why our AI creates perfectly optimized exam timetables for your school — seamlessly integrated with Google Slides, Google
-            Drive and Google Calendar, all within your Google Workspace.
+            Exams should inspire learning, not stress. That&apos;s why our AI creates perfectly optimized exam timetables for your school that eliminates scheduling conflicts, saves you 12+ days of manual team work, and integrates seamlessly with your existing Google Workspace including Google Sheets, Google Drive and Google Calendar.       
+           
           </p>
           <p className="text-xl md:text-2xl font-semibold text-amber-200">Automatic. Private. Global.</p>
-          <p>Experience the future of exam planning — explore the free demo below.</p>
+          <p>Experience a no-hassle, no-stress workflow for your next exams, launch the free demo below. (limited to 50 students)</p>
         </div>
 
         {/* Main capability callout */}
         <div className="w-full max-w-3xl rounded-2xl border border-white/15 bg-white/5 px-6 py-6 backdrop-blur">
-          <p className="text-sm font-semibold uppercase tracking-wide text-amber-200 mb-2">Main capability</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-amber-200 mb-2">easy process</p>
           <p className="text-base md:text-lg text-slate-100">
-            Upload your exam data sheet → our AI transforms it into conflict-free, constraint-aware PDF timetables and synced Google Calendars — in about{' '}
+          Upload your exam data sheet → *one click* our AI transforms it into conflict-free timetables (editable Google Docs + PDFs) → *one click* notify students and proctors via Gmail with synced Google Calendars — in about{' '}
             <span className="font-bold text-amber-200">2 hours instead of 14 days.</span>
           </p>
         </div>
@@ -75,7 +80,7 @@ export default function Hero() {
           >
             Get Started Today
           </button> */}
-          <QuoteModal/>
+          {/* <QuoteModal/> */}
           <button
             onClick={openDemoModal}
             className="rounded-full border border-slate-200/70 px-8 py-4 text-base font-semibold text-slate-50 hover:bg-slate-50 hover:text-slate-900 transition-colors"
@@ -88,6 +93,9 @@ export default function Hero() {
         <p className="text-slate-200 text-sm md:text-base">
           Be among our first clients and enjoy an exclusive launch offer.
         </p>
+        <p className="mt-4 text-xs md:text-sm text-white/60 leading-relaxed">
+  *Based on a 2,000-student school. Includes data preparation time.
+</p>
       </div>
     </section>
   )
