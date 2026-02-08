@@ -26,7 +26,7 @@ export default function Home() {
         <CountdownTimer/>
       ) : null}
       <FAQ />
-      {/* <QuoteModal/> */}
+      <QuoteModal/>
       <VideoDemo />
       <Footer />
       <DemoModal />
