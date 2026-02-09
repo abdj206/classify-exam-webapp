@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Logo from './Logo'
-import QuoteModal from './QuoteModal'
+//import QuoteModal from './QuoteModal'
 
 export default function Hero() {
   const openDemoModal = () => {
