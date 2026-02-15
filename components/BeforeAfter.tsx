@@ -18,7 +18,7 @@ export default function BeforeAfter() {
             <div className="space-y-4 mb-6">
               <div className="flex items-start">
                 <span className="text-red-500 mr-3 text-xl">✗</span>
-                <p className="text-gray-700">Manual room & proctor allocation</p>
+                <p className="text-gray-700">Manually creating schools' timetables</p>
               </div>
               <div className="flex items-start">
                 <span className="text-red-500 mr-3 text-xl">✗</span>
@@ -26,7 +26,11 @@ export default function BeforeAfter() {
               </div>
               <div className="flex items-start">
                 <span className="text-red-500 mr-3 text-xl">✗</span>
-                <p className="text-gray-700">10–15 days of coordination and corrections</p>
+                <p className="text-gray-700">10–15 days of scheduling and corrections</p>
+              </div>
+              <div className="flex items-start">
+                <span className="text-red-500 mr-3 text-xl">✗</span>
+                <p className="text-gray-700">Gap sessions increasing electricity, supervision costs and responsibility</p>
               </div>
             </div>
             <div className="rounded-xl overflow-hidden border border-gray-200 shadow-inner">
@@ -50,12 +54,19 @@ export default function BeforeAfter() {
               </div>
               <div className="flex items-start">
                 <span className="text-classify-teal mr-3 text-xl">✓</span>
-                <p className="text-gray-700">Automatic updates to <strong>Google Calendar</strong>, inform proctors by <strong>Gmail</strong>, and store PDF&apos;s in <strong>Google Drive</strong></p>
+                <p className="text-gray-700">Organized single-spreadsheet and automatic PDF export</p>
+                  {/* Automatic updates to <strong>Google Calendar</strong>, inform proctors by <strong>Gmail</strong>, and store PDF&apos;s in <strong>Google Drive</strong></p> */}
               </div>
               <div className="flex items-start">
                 <span className="text-classify-teal mr-3 text-xl">✓</span>
                 <p className="text-gray-700">
-                  <strong>~2 hours</strong> of total work time
+                  <strong>~30 minutes</strong> of total work time
+                </p>
+              </div>
+              <div className="flex items-start">
+                <span className="text-classify-teal mr-3 text-xl">✓</span>
+                <p className="text-gray-700">
+                  Almost no gap sessions, students leave earlier, saving money and time
                 </p>
               </div>
             </div>

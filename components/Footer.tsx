@@ -16,7 +16,7 @@ export default function Footer() {
               imageClassName="w-[100px] md:w-[170px] lg:w-[210px] object-contain drop-shadow-[0_12px_30px_rgba(0,0,0,0.45)]"
             />
             <p className="text-gray-300 leading-relaxed">
-              Classify exists to make exam organization feel effortless — so educators can focus on learning, not logistics.
+              Classify exists to make organization feel effortless — so educators can focus on education, not logistics.
             </p>
           </div>
 

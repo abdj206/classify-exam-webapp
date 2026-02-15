@@ -23,7 +23,7 @@ export default function PrivacyPolicyPage() {
             Last updated: <span className="font-medium text-slate-100">28/11/2025</span>
           </p>
           <p className="mt-3 max-w-3xl text-center text-sm sm:text-base text-slate-300">
-            Classify AI is committed to protecting your privacy and ensuring transparency in how we
+            Classify Services LLC is committed to protecting your privacy and ensuring transparency in how we
             handle personal information. This Privacy Policy explains what data we collect, how it is
             used, and the rights you have as a user.
           </p>
@@ -36,37 +36,41 @@ export default function PrivacyPolicyPage() {
             <p className="text-sm text-slate-300">
               This policy applies to our public website, our demo request and quote request forms,
               our communication emails, and our Google Sheets web application powered by Google Apps
-              Script. It does <span className="font-semibold">not</span> apply to the exam data you
+              Script. It does <span className="font-semibold">not</span> apply to the data you
               store inside your own Google Sheets; that data is fully controlled by your
               institution.
+
+              When we say “Classify”, "Classify Services", "Classify AI", “we”, “us”, and “our” in these terms we mean Classify Services LLC.
+              When we say "instituion's data," "school's data", "your internal data," in this policy, we mean your instituion's internal data used inside our products.
+              When we say “you” or “your,” we mean you. If you’re accessing our services on behalf of a legal entity (like your instituion's legal representative), you agree that you have the authority to bind that entity to these terms, and “you” and “your” will refer to that entity.
             </p>
 
             {/* 1. What the app does */}
             <SectionTitle number="1" title="What Our Google Sheets Web App Does" />
             <div className="space-y-3 text-sm leading-relaxed text-slate-200">
               <p>
-                Classify AI is a Google Sheets web application that helps schools manage exam
-                organization. From within Google Sheets, our Apps Script-based tools can:
+                Classify AI is a Google Sheets web application that helps schools manage their
+                organization. From within Google Sheets, our Apps Script-based tools can generate optimized timetables with minimal gap sessions.
               </p>
-              <ul className="ml-5 list-disc space-y-1 text-slate-200">
-                <li>Generate optimized exam timetables based on your constraints.</li>
-                <li>Synchronize sessions with Google Calendar.</li>
-                <li>Create exam-related documents in Google Drive (attendance sheets, envelopes, etc.).</li>
-                <li>Automate exam-related workflows inside your Google Workspace.</li>
-              </ul>
+              {/* <ul className="ml-5 list-disc space-y-1 text-slate-200"> */}
+                {/* <li>Generate optimized timetables based on your constraints.</li> */}
+                {/* <li>Synchronize sessions with Google Calendar.</li> */}
+                {/* <li>Create exam-related documents in Google Drive (attendance sheets, envelopes, etc.).</li> */}
+                {/* <li>Automate exam-related workflows inside your Google Workspace.</li> */}
+              {/* </ul> */}
               <p className="mt-3 font-semibold text-amber-200">
-                Your exam data (students, instructors, rooms, classes, constraints, schedules, etc.)
+                Your instituion's data (students, instructors, rooms, classes, constraints, schedules, etc.)
                 stays entirely inside your school&apos;s Google Workspace.
               </p>
               <p>
-                We do <span className="font-semibold">not</span> store, access, or copy this internal
-                exam data on our own servers. All processing happens inside your Google Sheets, Drive,
+                We do <span className="font-semibold">not</span> store, access, or copy this internal data on our own servers. All processing happens inside your Google Sheets, Drive,
                 and Calendar using Google Apps Script running under your account.
               </p>
             </div>
 
             {/* 2. Data we collect */}
             <SectionTitle number="2" title="Data We Collect" />
+
             <div className="space-y-4 text-sm leading-relaxed text-slate-200">
               <p>
                 We only collect the personal data that you voluntarily submit on our website, plus
@@ -83,8 +87,8 @@ export default function PrivacyPolicyPage() {
                 <li>Email address</li>
                 <li>Phone number (optional)</li>
                 <li>School name and school size</li>
-                <li>Role / position (e.g. exam coordinator, administrator)</li>
-                <li>Number of exams per year (if provided)</li>
+                <li>Role / position (e.g. headteacher, administrator)</li>
+                {/* <li>Number of exams per year (if provided)</li> */}
                 <li>Notes or comments you choose to include</li>
                 <li>Your choice to opt-in or not to updates and offers</li>
               </ul>
@@ -102,7 +106,7 @@ export default function PrivacyPolicyPage() {
               <SubTitle>2.3 Data We Do Not Collect</SubTitle>
               <p>We do not collect or have access to:</p>
               <ul className="ml-5 list-disc space-y-1">
-                <li>Exam data stored in your Google Sheets</li>
+                <li>Institution's data stored in your Google Sheets</li>
                 <li>Student or instructor names and contact details</li>
                 <li>Room, subject, or schedule details from your Sheets</li>
                 <li>Contents of your Google Drive files</li>
@@ -138,7 +142,7 @@ export default function PrivacyPolicyPage() {
                 writing to Sheets and generating documents and also to access the Google Workspace UI to perform actions.
               </p>
               <p className="font-semibold text-amber-200">
-                We never use these permissions to transmit your internal exam data to our own
+                We never use these permissions to transmit your internal data to our own
                 servers, nor to any external analytics or advertising tool.
               </p>
               <p>
@@ -171,9 +175,9 @@ export default function PrivacyPolicyPage() {
             {/* 5. Storage & security */}
             <SectionTitle number="5" title="Where and How Your Data Is Stored" />
             <div className="space-y-4 text-sm leading-relaxed text-slate-200">
-              <SubTitle>5.1 Exam Data (Sheets, Drive, Calendar)</SubTitle>
+              <SubTitle>5.1 Institution's Data</SubTitle>
               <p>
-                All exam-related data (students, classes, rooms, constraints, timetables, etc.) is
+                The instituion's data (students, classes, rooms, constraints, timetables, etc.) is
                 stored in your institution&apos;s Google Workspace:
               </p>
               <ul className="ml-5 list-disc space-y-1">
@@ -189,7 +193,7 @@ export default function PrivacyPolicyPage() {
               <p>Data you submit via website forms is stored securely in:</p>
               <ul className="ml-5 list-disc space-y-1">
                 <li>
-                  Our email infrastructure (via Nodemailer and our email service provider) for
+                  Our email infrastructure for
                   communication.
                 </li>
                 <li>
@@ -197,7 +201,7 @@ export default function PrivacyPolicyPage() {
                   marketing platforms).
                 </li>
                 <li>
-                  Stripe (future) for payment-related metadata only; card data is handled directly by
+                  Stripe for payment-related metadata only; card data is handled directly by
                   Stripe.
                 </li>
               </ul>
@@ -212,7 +216,7 @@ export default function PrivacyPolicyPage() {
                 internal access.
               </p>
               <p>
-                For exam data inside Google Sheets, Drive, and Calendar, Google&apos;s security and
+                For data inside Google Sheets, Drive, and Calendar, Google&apos;s security and
                 compliance standards apply, including encryption at rest and in transit, OAuth-based
                 access, and Google Workspace administrative controls.
               </p>
@@ -238,7 +242,7 @@ export default function PrivacyPolicyPage() {
                 .
               </p>
               <p>
-                Your internal exam data remains entirely under your control inside Google
+                Your internal data remains entirely under your control inside Google
                 Workspace—you can modify or delete it at any time directly in your Sheets, Drive,
                 and Calendar.
               </p>
@@ -261,7 +265,7 @@ export default function PrivacyPolicyPage() {
                 required by law (for example, billing records).
               </p>
               <p>
-                Exam data managed via the web app remains entirely in your Google Workspace and is
+                Internal data managed via the web app remains entirely in your Google Workspace and is
                 governed by Google&apos;s own retention and deletion policies.
               </p>
             </div>
@@ -314,7 +318,7 @@ export default function PrivacyPolicyPage() {
                 clauses where required.
               </p>
               <p>
-                Your exam data inside Google Workspace is stored and processed according to
+                Your school's data inside Google Workspace is stored and processed according to
                 Google&apos;s infrastructure and data center locations.
               </p>
             </div>

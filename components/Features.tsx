@@ -7,7 +7,7 @@ export default function Features() {
     <section id="features" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-classify-blue">
-        The heart of Classify: transforming your exam data into a flawless schedule.
+        The heart of Classify: transforming your data into a flawless schedule.
         </h2>
         <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
         Everything else is built to elevate that experience — simplifying coordination, eliminating stress, and giving your team valuable time back.
@@ -24,11 +24,11 @@ export default function Features() {
             </div>
 
             <div className="relative z-10 max-w-4xl">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              {/* <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Main function:
-              </h3>
+              </h3> */}
               <p className="text-lg md:text-xl mb-6 leading-relaxed">
-                Upload or connect a simple spreadsheet of your exams (classes, subjects, teachers, rooms, constraints), and Classify&apos;s AI add-on extension on Google Sheets turns it into a <strong>conflict-free, constraint-aware exam timetable PDF</strong> — ready to print and share.
+                Upload or connect a simple spreadsheet of your data (classes, subjects, teachers, rooms (optional), constraints), and Classify&apos;s AI add-on extension on Google Sheets turns it into a <strong>conflict-free, constraint-aware timetable PDF</strong> — ready to print and share.
               </p>
               <p className="text-xl md:text-2xl font-bold mb-6 text-classify-gold">
                 No more manual juggling: just <strong>one source sheet → one perfectly structured timetable</strong>, in about <strong>2 hours instead of 14 days</strong>.
@@ -53,13 +53,13 @@ export default function Features() {
         </div>
 
         {/* Bonus Features */}
-        <div>
+        {/* <div>
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-8 text-classify-blue">
             Bonus Features
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"> */}
             {/* Bonus #1 */}
-            <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
+            {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
               <div className="flex items-center mb-4">
                 <span className="bg-classify-teal text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
                   1
@@ -69,10 +69,10 @@ export default function Features() {
               <p className="text-gray-700">
                 Automatically creates and updates calendar events with reminders for each exam in <strong>Google Calendar</strong> — so proctors and students always see the latest schedule.
               </p>
-            </div>
+            </div> */}
 
             {/* Bonus #2 */}
-            <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
+            {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
               <div className="flex items-center mb-4">
                 <span className="bg-classify-teal text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
                   2
@@ -82,10 +82,10 @@ export default function Features() {
               <p className="text-gray-700">
                 Generate beautifully formatted timetables as PDFs and Google Docs stored <strong>directly in Google Drive</strong> — organized and ready to print.
               </p>
-            </div>
+            </div> */}
 
             {/* Bonus #3 */}
-            <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
+            {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
               <div className="flex items-center mb-4">
                 <span className="bg-classify-teal text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
                   3
@@ -95,20 +95,20 @@ export default function Features() {
               <p className="text-gray-700">
                 Send automated emails to proctors with their exam schedules (date/ time, rooms, and courses). 
               </p>
-            </div>
+            </div> */}
 
             {/* Bonus #4 */}
-            <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
+            {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors">
               <div className="flex items-center mb-4">
                 <span className="bg-classify-teal text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">
                   4
                 </span>
                 <h4 className="text-xl font-bold text-classify-blue">Bonus #4 – Printable headers & envelopes</h4>
               </div>
-              <p className="text-gray-700">
-                Auto-generate {/*<strong>electronic attendance Google Form</strong>, */}<strong>PDF timetables</strong>, and <strong>printable header sheets & envelopes for exams</strong> to simplify on-the-day logistics.
+              <p className="text-gray-700"> */}
+                {/* Auto-generate <strong>PDF timetables</strong>, and <strong>printable header sheets & envelopes for exams</strong> to simplify on-the-day logistics.
               </p>
-            </div>
+            </div>  */}
 
             {/* Bonus #5 */}
             {/* <div className="bg-gray-50 rounded-xl p-6 border-2 border-classify-teal/30 hover:border-classify-teal transition-colors md:col-span-2 lg:col-span-1">
@@ -137,8 +137,8 @@ export default function Features() {
   </p>
 </div> */}
 
-          </div>
-        </div>
+          {/* </div> 
+        </div>  */}
       </div>
     </section>
   )

@@ -19,7 +19,7 @@ export default function TermsPage() {
               Last updated: <span className="font-medium text-slate-100">28/11/2025</span>
             </p>
             <p className="mt-3 max-w-3xl text-center text-sm sm:text-base text-slate-300">
-              These Terms govern your use of the Classify AI website and Google Sheets-based exam
+              These Terms govern your use of the Classify website and Google Sheets-based Timetable
               management web app. Relax, grab a coffee and please read them carefully. It will take approximatly 10 minutes to read.
             </p>
           </div>
@@ -30,11 +30,11 @@ export default function TermsPage() {
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <article className="rounded-3xl border border-slate-800 bg-slate-950/60 p-6 shadow-[0_32px_120px_rgba(15,23,42,0.8)] sm:p-10">
               <p className="text-sm text-slate-300">
-                By accessing or using the Classify AI website (the &quot;Site&quot;) or the Classify
-                exam management web app integrated with Google Sheets (the &quot;Web App&quot; or
+                By accessing or using the Classify website (the &quot;Site&quot;) or the Classify
+                 Timetable web app integrated with Google Sheets (the &quot;Web App&quot; or
                 &quot;Service&quot;), you agree to be bound by these Terms &amp; Conditions
                 (&quot;Terms&quot;). These Terms form a binding agreement between you (the
-                &quot;Customer&quot;, &quot;User&quot;, or &quot;Institution&quot;) and Classify AI
+                &quot;Customer&quot;, &quot;User&quot;, or &quot;Institution&quot;) and Classify Services LLC
                 (&quot;we&quot;, &quot;us&quot;, &quot;our&quot;).
               </p>
   
@@ -46,6 +46,10 @@ export default function TermsPage() {
                   is intended primarily for educational institutions and their authorized staff. By
                   using the Service, you confirm that you have the authority to enter into this
                   agreement on behalf of your institution.
+
+                  When we say “Classify”, "Classify Services", "Classify AI", “we”, “us”, and “our” in these terms we mean Classify Services LLC.
+
+                  When we say “you” or “your,” we mean you. If you’re accessing our services on behalf of a legal entity (like your instituion's superior), you agree that you have the authority to bind that entity to these terms, and “you” and “your” will refer to that entity.
                 </p>
               </div>
   
@@ -64,28 +68,28 @@ export default function TermsPage() {
               <SectionTitle number="3" title="Description of the Service" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  Classify AI provides a Google Sheets–based web application (implemented using Google
-                  Apps Script) that assists institutions with exam management tasks, including:
+                  Classify provides a Google Sheets–based web application (implemented using Google
+                  Apps Script) that assists institutions with management tasks, including:
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
-                  <li>Generating exam timetables using data you provide.</li>
+                  <li>Generating timetables using data you provide.</li>
                   <li>
-                    Constraint-based scheduling logic, including detecting overlapping exams for the
-                    same student group, allocation based on instructor availability, room capacity
+                    Constraint-based scheduling logic, including detecting overlapping course sessions for the
+                    same student group or teacher's schedule, allocation based on instructor availability, room capacity
                     checks, and prevention of double-booking based on your inputs.
                   </li>
                   <li>Assigning or suggesting proctoring schedules.</li>
-                  <li>Synchronizing exam events with Google Calendar.</li>
-                  <li>
+                  {/* <li>Synchronizing exam events with Google Calendar.</li> */}
+                  {/* <li>
                     Generating documents in Google Drive, such as attendance sheets, envelopes, or
                     exam session summaries.
-                  </li>
+                  </li> */}
                   <li>Automating selected notifications and email templates, where configured.</li>
                 </ul>
                 <p>
-                  All exam data (students, instructors, rooms, subjects, constraints, schedules, etc.)
-                  remains stored in your own Google Workspace environment (Sheets, Drive, Calendar).
-                  Classify AI does not host or permanently store your internal academic data on its
+                  All school data (students, instructors, rooms, subjects, constraints, schedules, etc.)
+                  remains stored in your own Google Workspace environment (if applicable).
+                  Classify does not host or permanently store your internal academic data on its
                   own servers.
                 </p>
               </div>
@@ -94,9 +98,9 @@ export default function TermsPage() {
               <SectionTitle number="4" title="License Grant & Usage Scope" />
               <div className="space-y-4 text-sm leading-relaxed text-slate-200">
                 <p>
-                  Upon purchase or activation, and subject to these Terms, Classify AI grants your
+                  Upon purchase or activation, and subject to these Terms, Classify grants your
                   institution a limited, revocable, non-exclusive, non-transferable, non-sublicensable
-                  license to use the Web App for internal exam management purposes only.
+                  license to use the Web App for internal management purposes only.
                 </p>
   
                 <SubTitle>4.1 Tier A – Standard Schools (&lt; 3,000 students)</SubTitle>
@@ -128,7 +132,7 @@ export default function TermsPage() {
                     institutions that are not part of the licensed entity.
                   </li>
                   <li>
-                    Resale, white-labeling, or bundling of Classify AI as part of another commercial
+                    Resale, white-labeling, or bundling of Classify as part of another commercial
                     product requires explicit written agreement with Classify AI.
                   </li>
                 </ul>
@@ -161,7 +165,7 @@ export default function TermsPage() {
                 <p>
                   All rights, title, and interest in and to the Web App, underlying code, scripts,
                   workflows, algorithms, documentation, branding, logos, and the Site remain the
-                  exclusive property of Classify AI and its licensors.
+                  exclusive property of Classify Services LLC and its licensors.
                 </p>
                 <p>
                   You receive only limited usage rights under these Terms and do not acquire any
@@ -183,7 +187,7 @@ export default function TermsPage() {
                 </p>
                 <p>
                   Your institution is responsible for managing access to its Google Workspace accounts
-                  and ensuring that only authorized staff can use the Web App. Classify AI is not
+                  and ensuring that only authorized staff can use the Web App. Classify is not
                   responsible for issues arising from misconfigured Google Workspace permissions,
                   shared credentials, or compromised accounts.
                 </p>
@@ -214,7 +218,7 @@ export default function TermsPage() {
                 <p>
                   Sharing screenshots or non-sensitive demonstration videos is generally permitted, but
                   you remain responsible for any sensitive or confidential information you choose to
-                  share publicly. Classify AI is not liable for information that you or your staff
+                  share publicly. Classify is not liable for information that you or your staff
                   disclose on your own initiative.
                 </p>
               </div>
@@ -242,7 +246,7 @@ export default function TermsPage() {
   
                 <SubTitle>8.3 Refund Policy</SubTitle>
                 <p>
-                  Classify AI offers a full refund within <span className="font-semibold">7 days</span>{' '}
+                  Classify offers a full refund within <span className="font-semibold">7 days</span>{' '}
                   of the initial payment in the following situations:
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -256,11 +260,11 @@ export default function TermsPage() {
                   </li>
                   <li>
                     A legitimate issue prevents use of the Service and cannot reasonably be resolved
-                    by Classify AI within the 7-day period.
+                    by Classify within the 7-day period.
                   </li>
                 </ul>
                 <p>
-                  Before issuing a refund, Classify AI may invite you to complete a short, optional
+                  Before issuing a refund, Classify may invite you to complete a short, optional
                   feedback survey, which is used only to improve the Service.
                 </p>
                 <p>
@@ -296,7 +300,7 @@ export default function TermsPage() {
               <SectionTitle number="9" title="Price Changes" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  Classify AI reserves the right to change its prices for new or renewing customers.
+                  Classify reserves the right to change its prices for new or renewing customers.
                   For existing customers on non-locked plans, we will provide at least{' '}
                   <span className="font-semibold">30 days&apos; notice</span> before any price
                   increase takes effect.
@@ -312,7 +316,7 @@ export default function TermsPage() {
               <SectionTitle number="10" title="Support" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  Classify AI provides support through email and, where applicable, scheduled calls
+                  Classify provides support through email and, where applicable, scheduled calls
                   and priority onboarding for paid institutions. Support availability and response
                   times may vary based on your subscription or agreement.
                 </p>
@@ -322,9 +326,9 @@ export default function TermsPage() {
               <SectionTitle number="11" title="Data & Privacy" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  All exam-related data processed by the Web App resides within your institution&apos;s
-                  own Google Workspace environment (Sheets, Drive, Calendar). Classify AI does not
-                  host or permanently store your internal exam data.
+                  All data processed by the Web App resides within your institution&apos;s
+                  own Google Workspace environment. Classify does not
+                  host or permanently store your internal data.
                 </p>
                 <p>
                   Our handling of personal data provided through the Site (e.g. demo and quote
@@ -338,7 +342,7 @@ export default function TermsPage() {
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
                   The Web App depends on Google infrastructure and APIs, including Google Sheets,
-                  Drive, Calendar, and Apps Script. Classify AI is not responsible for interruptions
+                  Drive, Calendar, and Apps Script. Classify is not responsible for interruptions
                   or limitations caused by:
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -366,7 +370,7 @@ export default function TermsPage() {
                   of any kind, whether express, implied, or statutory.
                 </p>
                 <p>
-                  Classify AI does not warrant that the Service will be error-free, fully compatible
+                  Classify does not warrant that the Service will be error-free, fully compatible
                   with all custom configurations, or sufficient to satisfy all institutional
                   requirements.
                 </p>
@@ -393,9 +397,9 @@ export default function TermsPage() {
                   rise to the claim.
                 </p>
                 <p>
-                  Classify AI shall not be liable for any indirect, incidental, special,
+                  Classify shall not be liable for any indirect, incidental, special,
                   consequential, or punitive damages, including lost profits, data loss, exam
-                  disruptions, or reputational damage, even if advised of the possibility of such
+                  disruptions, unsatisfied results from using our products or reputational damage, even if advised of the possibility of such
                   damages.
                 </p>
                 <p>
@@ -408,7 +412,7 @@ export default function TermsPage() {
               <SectionTitle number="15" title="Indemnification" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  You agree to indemnify and hold harmless Classify AI, its officers, directors,
+                  You agree to indemnify and hold harmless Classify, its officers, directors,
                   employees, and agents from and against any claims, damages, losses, liabilities, and
                   expenses (including reasonable legal fees) arising out of:
                 </p>
@@ -427,7 +431,7 @@ export default function TermsPage() {
               <SectionTitle number="16" title="Termination" />
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <p>
-                  Classify AI may suspend or terminate your access to the Service, in whole or in
+                  Classify may suspend or terminate your access to the Service, in whole or in
                   part, with immediate effect if:
                 </p>
                 <ul className="ml-5 list-disc space-y-1">
@@ -514,7 +518,7 @@ export default function TermsPage() {
               <div className="space-y-3 text-sm leading-relaxed text-slate-200">
                 <SubTitle>21.1 Entire Agreement</SubTitle>
                 <p>
-                  These Terms constitute the entire agreement between you and Classify AI regarding
+                  These Terms constitute the entire agreement between you and Classify regarding
                   the Service and supersede all prior or contemporaneous agreements, proposals, or
                   communications.
                 </p>
@@ -527,14 +531,14 @@ export default function TermsPage() {
   
                 <SubTitle>21.3 No Waiver</SubTitle>
                 <p>
-                  The failure of Classify AI to enforce any right or provision of these Terms will not
+                  The failure of Classify to enforce any right or provision of these Terms will not
                   be deemed a waiver of such right or provision.
                 </p>
   
                 <SubTitle>21.4 Assignment</SubTitle>
                 <p>
                   You may not assign or transfer your rights or obligations under these Terms without
-                  our prior written consent. Classify AI may assign its rights or obligations in
+                  our prior written consent. Classify may assign its rights or obligations in
                   connection with a merger, acquisition, or sale of assets.
                 </p>
   
@@ -546,7 +550,7 @@ export default function TermsPage() {
   
                 <SubTitle>21.6 Force Majeure</SubTitle>
                 <p>
-                  Classify AI will not be liable for any failure or delay in performance caused by
+                  Classify will not be liable for any failure or delay in performance caused by
                   events beyond its reasonable control, including but not limited to natural
                   disasters, wars, government actions, strikes, internet failures, or outages of
                   Google Workspace or other third-party services.

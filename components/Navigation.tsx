@@ -46,12 +46,12 @@ export default function Navigation() {
             >
               Why Classify
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection('how-it-works')}
               className={linkBase}
             >
               How it works
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection('features')}
               className={linkBase}
@@ -128,24 +128,24 @@ export default function Navigation() {
             >
               Why Classify
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection('how-it-works')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               How it works
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection('features')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               Features
             </button>
-            <button
+            {/* <button
               onClick={() => scrollToSection('pricing')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               Pricing
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection('faq')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
@@ -171,7 +171,7 @@ export default function Navigation() {
               >
                 Get Started
               </button> */}
-              <QuoteModal/>
+              {/* <QuoteModal/> */}
             </div>
           </div>
         )}

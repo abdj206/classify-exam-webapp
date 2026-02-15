@@ -12,7 +12,7 @@ interface QuoteFormData {
   contactName: string
   contactEmail: string
   phone: string
-  examsPerYear: string
+  // examsPerYear: string
   notes: string
 }
 
@@ -271,7 +271,7 @@ export default function QuoteModal() {
     contactName: '',
     contactEmail: '',
     phone: '',
-    examsPerYear: '',
+    // examsPerYear: '',
     notes: '',
   })
 
@@ -369,7 +369,8 @@ export default function QuoteModal() {
                   </h2>
                   <p className="text-slate-300 mt-1 text-sm md:text-base">
                     Tell us a few details and we&apos;ll calculate a tailored offer based on your
-                    context and exam workload.
+                    context 
+                    {/* and exam workload. */}
                   </p>
                 </div>
                 <button
@@ -516,7 +517,7 @@ export default function QuoteModal() {
                   </div>
 
                   {/* Exams per year */}
-                  <div>
+                  {/* <div>
                     <label className="block text-sm font-medium mb-2">
                       Approx. number of exam sessions per year <span className="text-red-500">*</span>
                     </label>
@@ -530,7 +531,7 @@ export default function QuoteModal() {
                       disabled={status === 'submitting'}
                       className="w-full px-4 py-2 border border-slate-700 rounded-lg bg-slate-900 text-slate-100 focus:ring-2 focus:ring-amber-300 focus:border-transparent disabled:opacity-60"
                     />
-                  </div>
+                  </div> */}
 
                   {/* Contact name */}
                   <div>
@@ -591,7 +592,7 @@ export default function QuoteModal() {
                       onChange={handleChange}
                       disabled={status === 'submitting'}
                       className="w-full px-4 py-2 border border-slate-700 rounded-lg bg-slate-900 text-slate-100 focus:ring-2 focus:ring-amber-300 focus:border-transparent disabled:opacity-60"
-                      placeholder="E.g. multiple campuses, special exam formats, accreditation constraints…"
+                      placeholder="E.g. multiple campuses, special formats, accreditation constraints…"
                     />
                   </div>
                               {/* Turnstile */}

@@ -21,7 +21,7 @@ export default function VideoDemo() {
                   <div className="text-6xl mb-4">▶️</div>
                   <p className="text-lg font-semibold">Video Demo Coming Soon</p>
                   <p className="text-sm text-gray-400 mt-2">
-                    Watch how Classify transforms exam scheduling
+                    Watch how Classify transforms schools' scheduling
                   </p>
                 </div>
               </div>

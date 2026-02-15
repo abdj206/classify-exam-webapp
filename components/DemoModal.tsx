@@ -313,7 +313,7 @@ export default function DemoModal() {
                   required
                   value={formData.role}
                   onChange={handleChange}
-                  placeholder="e.g., Exam Coordinator, Principal, IT Admin"
+                  placeholder="e.g., Headteacher, Principal, IT Admin"
                   disabled={status === 'submitting'}
                   className="w-full px-4 py-2 border border-slate-700 rounded-lg bg-slate-900 text-slate-100 focus:ring-2 focus:ring-amber-300 focus:border-transparent disabled:opacity-60"
                 />

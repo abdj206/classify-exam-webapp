@@ -61,7 +61,7 @@ export default function Hero() {
   </p>
   
   <p>
-    <strong>Built to eliminate free periods.</strong> Our dynamic scheduler optimizes timetables with almost zero gaps. That means students leave earlier, reduce wasted hours and schools save on supervision costs. Plus, we support flexible 30-minute class session scheduling.
+    <strong>Built to eliminate free periods,</strong> our dynamic scheduler optimizes timetables with almost zero gaps. That means students leave earlier, reduce wasted hours and schools save on supervision costs. Plus, we support flexible 30-minute class session scheduling.
   </p>
   
   <p>
