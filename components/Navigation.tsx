@@ -39,32 +39,32 @@ export default function Navigation() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          {/* <div className="hidden lg:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection('why')}
               className={linkBase}
             >
               Why Classify
-            </button>
+            </button> */}
             {/* <button
               onClick={() => scrollToSection('how-it-works')}
               className={linkBase}
             >
               How it works
             </button> */}
-            <button
+            {/* <button
               onClick={() => scrollToSection('features')}
               className={linkBase}
             >
               Features
-            </button>
+            </button> */}
             {/*<button
               onClick={() => scrollToSection('pricing')}
               className={linkBase}
             >
               Pricing
             </button> */}
-            <button
+            {/* <button
               onClick={() => scrollToSection('faq')}
               className={linkBase}
             >
@@ -76,7 +76,7 @@ export default function Navigation() {
             >
               Contact
             </button>
-          </div>
+          </div> */}
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">

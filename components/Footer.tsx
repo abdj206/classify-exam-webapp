@@ -21,7 +21,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
+          {/* <div>
             <h3 className="font-bold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
@@ -39,7 +39,7 @@ export default function Footer() {
                 >
                   Features
                 </a>
-              </li>
+              </li> */}
               {/* <li>
                 <a
                   href="#pricing"
@@ -48,7 +48,7 @@ export default function Footer() {
                   Pricing
                 </a>
               </li> */}
-              <li>
+              {/* <li>
                 <a
                   href="#faq"
                   className="text-gray-300 hover:text-classify-gold transition-colors"
@@ -56,8 +56,8 @@ export default function Footer() {
                   FAQ
                 </a>
               </li>
-            </ul>
-          </div>
+            </ul> 
+          </div>*/}
 
           {/* Contact */}
           <div>

@@ -17,17 +17,17 @@ export default function Home() {
     <main className="min-h-screen">
       <Navigation />
       <Hero />
-      <BeforeAfter />
-      <Features />
+      {/* <BeforeAfter /> */}
+      {/* <Features /> */}
       {/* <HowItWorks /> */}
-      <div id="how-it-works__after" className="h-px w-full" />
+      {/* <div id="how-it-works__after" className="h-px w-full" /> */}
       {/*<Pricing />*/}
-      {Date.now() < new Date('2026-02-31T00:00:00Z').getTime() ? (
+      {/* {Date.now() < new Date('2026-02-31T00:00:00Z').getTime() ? (
         <CountdownTimer/>
-      ) : null}
-      <FAQ />
-      <QuoteModal/>
-      <VideoDemo />
+      ) : null} */}
+      {/* <FAQ /> */}
+      {/* <QuoteModal/> */}
+      {/* <VideoDemo /> */}
       <Footer />
       <DemoModal />
     </main>

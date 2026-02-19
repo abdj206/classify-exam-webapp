@@ -42,17 +42,25 @@ export default function Hero() {
         />
 
         {/* Headline */}
-        <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+        {/* <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
   From Google Sheets to perfect school timetables{" "}
   <span className="text-indigo-400 font-extrabold">
     in under 30 minutes*
+  </span>
+</h1> */}
+<h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
+  Lorem Ipsum{" "}
+  <span className="text-indigo-400 font-extrabold">
+  dolor sit amet*
   </span>
 </h1>
 
 {/* Sub-headline */}
 <div className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed">
-
-  <p className="text-classify-gold font-extrabold">
+<p className="text-classify-gold font-extrabold">
+  Lorem Ipsum
+  </p>
+  {/* --<p className="text-classify-gold font-extrabold">
   We are a team of educators and developers who are passionate about making education more efficient and effective.
   </p>
   
@@ -70,7 +78,7 @@ export default function Hero() {
   
   <p>
     Say goodbye to wasted time and complicated scheduling. Say hello to smarter timetables.
-  </p>
+  </p> */}
           {/* <p>
             Exams should inspire learning, not stress. That&apos;s why our AI creates perfectly optimized exam timetables for your school that eliminates scheduling conflicts, saves you 12+ days of manual team work, and integrates seamlessly with your existing Google Workspace including Google Sheets, Google Drive and Google Calendar.       
            
@@ -78,14 +86,37 @@ export default function Hero() {
           {/* <p className="text-xl md:text-2xl font-semibold text-amber-200">Automatic. Private. Global.</p>
           <p>Experience a no-hassle, no-stress workflow for your timetables, launch the free demo below. (limited to 50 students)</p>*/}
         </div> 
-
         {/* Main capability callout */}
-        <div className="w-full max-w-3xl rounded-2xl border border-white/15 bg-white/5 px-6 py-6 backdrop-blur">
+        {/* -- <div className="w-full max-w-3xl rounded-2xl border border-white/15 bg-white/5 px-6 py-6 backdrop-blur">
           <p className="text-sm font-semibold uppercase tracking-wide text-amber-200 mb-2">easy process</p>
           <p className="text-base md:text-lg text-slate-100">
           Upload your classes, teachers and rooms (optional) data sheet → our AI transforms it into conflict-free timetables (editable) → download as PDFs — all in about{' '}
             <span className="font-bold text-amber-200">30 minutes instead of days, or even weeks</span>
           </p>
+        </div> */}
+
+        {/* VSL Video Placeholder */}
+        <div className="w-full max-w-3xl rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-slate-900/60 bg-slate-900/80 backdrop-blur">
+          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+            {/* Replace the src below with your finalized video URL or file path */}
+            <video
+              className="absolute inset-0 w-full h-full object-cover"
+              controls
+              // poster="/images/video-poster.png"
+            >
+              {/* <source src="/videos/vsl.mp4" type="video/mp4" /> */}
+              Your browser does not support the video tag.
+            </video>
+            {/* Static overlay shown while no video src is set — remove once video is attached */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/70 pointer-events-none">
+              <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mb-4">
+                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <p className="text-white/60 text-sm font-medium tracking-wide uppercase">Video coming soon</p>
+            </div>
+          </div>
         </div>
 
         {/* CTA Buttons */}
