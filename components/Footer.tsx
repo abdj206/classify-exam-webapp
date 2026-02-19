@@ -71,7 +71,7 @@ export default function Footer() {
                   info@classifyservices.com
                 </a>
                 </li>
-                <li>
+                {/* <li>
                   <a
                     href="mailto:sales@classifyservices.com"
                     className="text-gray-300 hover:text-classify-gold transition-colors"
@@ -86,7 +86,7 @@ export default function Footer() {
                   >
                     support@classifyservices.com
                   </a>
-                </li>
+                </li> */}
             </ul>
           </div>
         </div>

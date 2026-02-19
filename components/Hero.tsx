@@ -51,14 +51,14 @@ export default function Hero() {
 <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
   Lorem Ipsum{" "}
   <span className="text-indigo-400 font-extrabold">
-  dolor sit amet*
+  dolor sit amet
   </span>
 </h1>
 
 {/* Sub-headline */}
 <div className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed">
 <p className="text-classify-gold font-extrabold">
-  Lorem Ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
   {/* --<p className="text-classify-gold font-extrabold">
   We are a team of educators and developers who are passionate about making education more efficient and effective.
@@ -95,32 +95,114 @@ export default function Hero() {
           </p>
         </div> */}
 
-        {/* VSL Video Placeholder */}
-        <div className="w-full max-w-3xl rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-slate-900/60 bg-slate-900/80 backdrop-blur">
-          <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-            {/* Replace the src below with your finalized video URL or file path */}
-            <video
-              className="absolute inset-0 w-full h-full object-cover"
-              controls
-              // poster="/images/video-poster.png"
+        {/* VSL Video Placeholder — with handwritten arrow annotation */}
+        <div className="relative w-full max-w-3xl">
+
+          {/* Handwritten arrow + label — positioned to the left of the video, desktop only */}
+          <div
+            className="absolute hidden md:flex flex-col items-center gap-1 select-none pointer-events-none"
+            style={{ left: '-170px', top: '60px' }}
+          >
+            <p
+              style={{
+                fontFamily: "'Caveat', 'Segoe Script', cursive",
+                fontSize: '1.15rem',
+                lineHeight: '1.3',
+                color: '#fca5a5',
+                textAlign: 'center',
+                marginBottom: '4px',
+              }}
             >
-              {/* <source src="/videos/vsl.mp4" type="video/mp4" /> */}
-              Your browser does not support the video tag.
-            </video>
-            {/* Static overlay shown while no video src is set — remove once video is attached */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/70 pointer-events-none">
-              <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mb-4">
-                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
+              lorem ipsum<br />watch this
+            </p>
+            {/* Hand-drawn curved arrow SVG pointing right-downward toward the video */}
+            {/* Hand-drawn curved arrow SVG pointing right-downward toward the video */}
+            <svg
+              width="90"
+              height="80"
+              viewBox="0 0 90 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              style={{ opacity: 0.85 }}
+            >
+              {/* Starts top-left, swoops down then curves right */}
+              <path
+                d="M20 5 C10 30, 15 55, 72 68"
+                stroke="#fca5a5"
+                strokeWidth="2"
+                strokeLinecap="round"
+                fill="none"
+              />
+              {/* Arrowhead pointing right */}
+              <path
+                d="M72 68 L58 60 M72 68 L60 76"
+                stroke="#fca5a5"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          {/* Video block */}
+          <div className="w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-slate-900/60 bg-slate-900/80 backdrop-blur">
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              {/* Replace the src below with your finalized video URL or file path */}
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                controls
+                // poster="/images/video-poster.png"
+              >
+                {/* <source src="/videos/vsl.mp4" type="video/mp4" /> */}
+                Your browser does not support the video tag.
+              </video>
+              {/* Static overlay shown while no video src is set — remove once video is attached */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/70 pointer-events-none">
+                <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mb-4">
+                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+                <p className="text-white/60 text-sm font-medium tracking-wide uppercase">Video coming soon</p>
               </div>
-              <p className="text-white/60 text-sm font-medium tracking-wide uppercase">Video coming soon</p>
             </div>
           </div>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {/* Shimmer keyframes — scoped inline so no global CSS file needed */}
+          <style>{`
+            @keyframes shimmer-sweep {
+              0%   { background-position: 200% center; }
+              100% { background-position: -200% center; }
+            }
+          `}</style>
+
+          <button
+            onClick={openDemoModal}
+            className="relative overflow-hidden rounded-full border border-slate-200/70 px-8 py-4 text-base font-semibold text-slate-50 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+            style={{ isolation: 'isolate' }}
+          >
+            {/* Sweep shimmer light overlay */}
+            <span
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background:
+                  'linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.18) 50%, transparent 75%)',
+                backgroundSize: '200% 100%',
+                animation: 'shimmer-sweep 2.4s linear infinite',
+                borderRadius: 'inherit',
+                pointerEvents: 'none',
+              }}
+            />
+            Launch Free Demo
+          </button>
+        </div>
+
+        {/* CTA Buttons */}
+        {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4"> */}
           {/* <button
             onClick={scrollToPricing}
             className="rounded-full bg-slate-50 px-8 py-4 text-base font-semibold text-slate-900 shadow-xl shadow-slate-900/40 hover:bg-slate-200 transition-colors"
@@ -128,21 +210,21 @@ export default function Hero() {
             Get Started Today
           </button> */}
           {/* <QuoteModal/> */}
-          <button
+          {/* <button
             onClick={openDemoModal}
             className="rounded-full border border-slate-200/70 px-8 py-4 text-base font-semibold text-slate-50 hover:bg-slate-50 hover:text-slate-900 transition-colors"
           >
             Launch Free Demo
           </button>
-        </div>
+        </div> */}
 
         {/* Trust text */}
-        <p className="text-slate-200 text-sm md:text-base">
+        {/*  -- <p className="text-slate-200 text-sm md:text-base">
           Be among our first clients and enjoy an exclusive launch offer.
         </p>
         <p className="mt-4 text-xs md:text-sm text-white/60 leading-relaxed">
   *Based on a 1,000-student school. Includes data preparation time.
-</p>
+</p> */}
       </div>
     </section>
   )
