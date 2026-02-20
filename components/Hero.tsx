@@ -31,7 +31,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-6">
         {/* Badge */}
-        <div className="inline-flex items-center rounded-full border border-amber-300/40 bg-amber-400/10 px-6 py-6 text-ms font-semibold text-amber-200 shadow-lg shadow-amber-500/10">
+        <div className="inline-flex items-center text-center rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-3 md:px-6 md:py-4 text-sm md:text-ms font-semibold text-amber-200 shadow-lg shadow-amber-500/10 max-w-xs sm:max-w-sm md:max-w-none leading-snug">
           🔥 We&apos;ll save your team <span className="font-bold ml-1">around 14 days</span> — so your staff can focus on teaching, not admin.
         </div>
 
