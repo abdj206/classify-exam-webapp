@@ -4,11 +4,55 @@ import React from 'react'
 import Logo from './Logo'
 //import QuoteModal from './QuoteModal'
 
+function TypewriterBadge() {
+  const BOLD = 'around 14 days'
+  const prefix = "We'll save your team "
+  const suffix = ' — so your staff can focus on teaching, not admin.'
+  const fullText = prefix + BOLD + suffix
+
+  const boldStart = prefix.length
+  const boldEnd = prefix.length + BOLD.length
+
+  const [displayed, setDisplayed] = React.useState('')
+  const [done, setDone] = React.useState(false)
+
+  const beforeBold = displayed.slice(0, Math.min(displayed.length, boldStart))
+  const inBold = displayed.length > boldStart ? displayed.slice(boldStart, Math.min(displayed.length, boldEnd)) : ''
+  const afterBold = displayed.length > boldEnd ? displayed.slice(boldEnd) : ''
+
+  React.useEffect(() => {
+    let i = 0
+    const interval = setInterval(() => {
+      i++
+      setDisplayed(fullText.slice(0, i))
+      if (i >= fullText.length) {
+        clearInterval(interval)
+        setDone(true)
+      }
+    }, 35)
+    return () => clearInterval(interval)
+  }, [])
+
+  return (
+    <div className="rounded-full border border-amber-300/40 bg-amber-400/10 px-5 py-3 text-sm font-semibold text-amber-200 shadow-lg shadow-amber-500/10 text-center leading-relaxed min-h-[44px]">
+      🔥{' '}
+      {beforeBold}
+      {inBold && <span className="font-bold">{inBold}</span>}
+      {afterBold}
+      {!done && (
+        <span className="inline-block w-[2px] h-[1em] bg-amber-300 ml-[1px] align-middle animate-pulse" />
+      )}
+    </div>
+  )
+}
+
 export default function Hero() {
   const openDemoModal = () => {
     const event = new CustomEvent('openDemoModal')
     window.dispatchEvent(event)
   }
+
+  
 
   // const scrollToPricing = () => {
   //   const element = document.getElementById('pricing')
@@ -31,9 +75,10 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center gap-6">
         {/* Badge */}
-        <div className="inline-flex items-center text-center rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-3 md:px-6 md:py-4 text-sm md:text-ms font-semibold text-amber-200 shadow-lg shadow-amber-500/10 max-w-xs sm:max-w-sm md:max-w-none leading-snug">
+        {/* <div className="inline-flex items-center text-center rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-3 md:px-6 md:py-4 text-sm md:text-ms font-semibold text-amber-200 shadow-lg shadow-amber-500/10 max-w-xs sm:max-w-sm md:max-w-none leading-snug">
           🔥 We&apos;ll save your team <span className="font-bold ml-1">around 14 days</span> — so your staff can focus on teaching, not admin.
-        </div>
+        </div> */}
+        <TypewriterBadge/>
 
         {/* Logo */}
         <Logo
