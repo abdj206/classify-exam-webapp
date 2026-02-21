@@ -94,16 +94,16 @@ export default function Hero() {
   </span>
 </h1> */}
 <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-  Lorem Ipsum{" "}
+  Stop "Building" Timetables...{" "}
   <span className="text-indigo-400 font-extrabold">
-  dolor sit amet
+  And Start Generating Takes seconds not weeks.
   </span>
 </h1>
 
 {/* Sub-headline */}
 <div className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed">
 <p className="text-classify-gold font-extrabold">
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Our software generates your <strong>semester timetable</strong> and your <strong>exam timetable</strong> without conflicts using AI that optimizes rooms, teachers, cohorts, and workload rules in seconds.
   </p>
   {/* --<p className="text-classify-gold font-extrabold">
   We are a team of educators and developers who are passionate about making education more efficient and effective.
@@ -141,52 +141,56 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         </div> */}
 
         {/* VSL Video Placeholder — with handwritten arrow annotation */}
-        <div className="relative w-full max-w-3xl">
+        <div className="relative w-full max-w-5xl mx-auto">
+  <div className="hidden md:flex items-start gap-8">
+    
+    {/* Left handwritten block */}
+    <div className="flex flex-col items-center select-none pointer-events-none mt-16">
+      <p
+        style={{
+          fontFamily: "'Caveat', 'Segoe Script', cursive",
+          fontSize: '1.15rem',
+          lineHeight: '1.3',
+          color: '#fca5a5',
+          textAlign: 'center',
+          marginBottom: '4px',
+        }}
+      >
+        Principal 💠<br />
+        Vice Principal 💠<br />
+        Academic Director 💠<br />
+        Exams Officer 💠<br />
+        Anyone involved in scheduling<br />
+        watch this
+      </p>
 
-          {/* Handwritten arrow + label — positioned to the left of the video, desktop only */}
-          <div
-            className="absolute hidden md:flex flex-col items-center gap-1 select-none pointer-events-none"
-            style={{ left: '-170px', top: '60px' }}
-          >
-            <p
-              style={{
-                fontFamily: "'Caveat', 'Segoe Script', cursive",
-                fontSize: '1.15rem',
-                lineHeight: '1.3',
-                color: '#fca5a5',
-                textAlign: 'center',
-                marginBottom: '4px',
-              }}
-            >
-              lorem ipsum<br />watch this
-            </p>
-            {/* Hand-drawn curved arrow SVG pointing right-downward toward the video */}
-            {/* Hand-drawn curved arrow SVG pointing right-downward toward the video */}
-            <svg
-              width="90"
-              height="80"
-              viewBox="0 0 90 80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              style={{ opacity: 0.85 }}
-            >
-              {/* Starts top-left, swoops down then curves right */}
-              <path
-                d="M20 5 C10 30, 15 55, 72 68"
-                stroke="#fca5a5"
-                strokeWidth="2"
-                strokeLinecap="round"
-                fill="none"
-              />
-              {/* Arrowhead pointing right */}
-              <path
-                d="M72 68 L58 60 M72 68 L60 76"
-                stroke="#fca5a5"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            </svg>
-          </div>
+      <svg
+        width="90"
+        height="80"
+        viewBox="0 0 90 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ opacity: 0.85 }}
+      >
+        <path
+          d="M20 5 C10 30, 15 55, 72 68"
+          stroke="#fca5a5"
+          strokeWidth="2"
+          strokeLinecap="round"
+          fill="none"
+        />
+        <path
+          d="M72 68 L58 60 M72 68 L60 76"
+          stroke="#fca5a5"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    </div>
+
+   
+
+  
 
           {/* Video block */}
           <div className="w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-slate-900/60 bg-slate-900/80 backdrop-blur">
@@ -211,6 +215,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
               </div>
             </div>
           </div>
+        </div>
         </div>
 
         {/* CTA Buttons */}
