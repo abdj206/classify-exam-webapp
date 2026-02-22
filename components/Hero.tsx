@@ -140,84 +140,136 @@ Our software generates your <strong>semester timetable</strong> and your <strong
           </p>
         </div> */}
 
-        {/* VSL Video Placeholder — with handwritten arrow annotation */}
-        <div className="relative w-full max-w-5xl mx-auto">
-  <div className="hidden md:flex items-start gap-8">
-    
-    {/* Left handwritten block */}
-    <div className="flex flex-col items-center select-none pointer-events-none mt-16">
-      <p
-        style={{
-          fontFamily: "'Caveat', 'Segoe Script', cursive",
-          fontSize: '1.15rem',
-          lineHeight: '1.3',
-          color: '#fca5a5',
-          textAlign: 'center',
-          marginBottom: '4px',
-        }}
-      >
-        Principal 💠<br />
-        Vice Principal 💠<br />
-        Academic Director 💠<br />
-        Exams Officer 💠<br />
-        Anyone involved in scheduling<br />
-        watch this
-      </p>
+{/* VSL Video Placeholder — with handwritten arrow annotation */}
+<div className="relative w-full max-w-5xl mx-auto px-4">
 
-      <svg
-        width="90"
-        height="80"
-        viewBox="0 0 90 80"
+  {/* ── Mobile: stacked annotation above video ── */}
+  <div className="flex flex-col items-center gap-4 md:hidden mb-4 select-none pointer-events-none">
+    <p
+      style={{
+        fontFamily: "'Caveat', 'Segoe Script', cursive",
+        fontSize: '1.1rem',
+        lineHeight: '1.4',
+        color: '#fca5a5',
+        textAlign: 'center',
+      }}
+    >
+      Principal 💠<br />
+      Vice Principal 💠<br />
+      Academic Director 💠<br />
+      Exams Officer 💠<br />
+      Anyone involved in scheduling<br />
+      watch this
+    </p>
+
+    {/* Arrow pointing down on mobile */}
+    <svg
+      width="40"
+      height="50"
+      viewBox="0 0 40 50"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ opacity: 0.85 }}
+    >
+      <path
+        d="M20 2 C20 20, 20 30, 20 42"
+        stroke="#fca5a5"
+        strokeWidth="2"
+        strokeLinecap="round"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ opacity: 0.85 }}
+      />
+      <path
+        d="M20 42 L12 32 M20 42 L28 32"
+        stroke="#fca5a5"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  </div>
+
+  {/* ── Desktop: annotation absolutely overlaid to the left of the video ── */}
+  {/*
+      The annotation is taken out of flow so the video column can be
+      truly centered. It sits in negative left space via a left offset.
+  */}
+  <div
+    className="hidden md:flex flex-col items-center select-none pointer-events-none"
+    style={{
+      position: 'absolute',
+      left: '-200px',       /* pull it into the left margin */
+      top: '50%',
+      transform: 'translateY(-60%)',
+      width: '180px',
+    }}
+  >
+    <p
+      style={{
+        fontFamily: "'Caveat', 'Segoe Script', cursive",
+        fontSize: '1.15rem',
+        lineHeight: '1.35',
+        color: '#fca5a5',
+        textAlign: 'center',
+        marginBottom: '4px',
+      }}
+    >
+      Principal 💠<br />
+      Vice Principal 💠<br />
+      Academic Director 💠<br />
+      Exams Officer 💠<br />
+      Anyone involved in scheduling<br />
+      watch this
+    </p>
+
+    {/* Arrow curves right toward the video */}
+    <svg
+      width="90"
+      height="80"
+      viewBox="0 0 90 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ opacity: 0.85 }}
+    >
+      <path
+        d="M20 5 C10 30, 15 55, 72 68"
+        stroke="#fca5a5"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
+      />
+      <path
+        d="M72 68 L58 60 M72 68 L60 76"
+        stroke="#fca5a5"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  </div>
+
+  {/* ── Video block — full width, centered ── */}
+  <div className="w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-slate-900/60 bg-slate-900/80 backdrop-blur">
+    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        controls
+        // poster="/images/video-poster.png"
       >
-        <path
-          d="M20 5 C10 30, 15 55, 72 68"
-          stroke="#fca5a5"
-          strokeWidth="2"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M72 68 L58 60 M72 68 L60 76"
-          stroke="#fca5a5"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
+        {/* <source src="/videos/vsl.mp4" type="video/mp4" /> */}
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Static overlay — remove once video src is set */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/70 pointer-events-none">
+        <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mb-4">
+          <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+        <p className="text-white/60 text-sm font-medium tracking-wide uppercase">Video coming soon</p>
+      </div>
     </div>
+  </div>
 
-   
-
-  
-
-          {/* Video block */}
-          <div className="w-full rounded-2xl overflow-hidden border border-white/20 shadow-2xl shadow-slate-900/60 bg-slate-900/80 backdrop-blur">
-            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-              {/* Replace the src below with your finalized video URL or file path */}
-              <video
-                className="absolute inset-0 w-full h-full object-cover"
-                controls
-                // poster="/images/video-poster.png"
-              >
-                {/* <source src="/videos/vsl.mp4" type="video/mp4" /> */}
-                Your browser does not support the video tag.
-              </video>
-              {/* Static overlay shown while no video src is set — remove once video is attached */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-950/70 pointer-events-none">
-                <div className="w-20 h-20 rounded-full bg-white/10 border-2 border-white/30 flex items-center justify-center mb-4">
-                  <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-                <p className="text-white/60 text-sm font-medium tracking-wide uppercase">Video coming soon</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-
+</div>
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           {/* Shimmer keyframes — scoped inline so no global CSS file needed */}
