@@ -93,10 +93,19 @@ export default function Hero() {
     in under 30 minutes*
   </span>
 </h1> */}
-<h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
-  Stop "Building" Timetables...{" "}
-  <span className="text-indigo-400 font-extrabold">
-  And Start Generating Takes seconds not weeks.
+<h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight">
+  Stop &ldquo;Building&rdquo; Timetables&hellip;{" "}
+  <span className="block mt-2 bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent font-extrabold">
+    And Start Generating.
+  </span>
+  <span
+    className="block mt-1 text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide"
+    style={{
+      fontFamily: "'Caveat', 'Segoe Script', cursive",
+      color: '#fca5a5',
+    }}
+  >
+    Takes seconds, not weeks.
   </span>
 </h1>
 
@@ -271,37 +280,37 @@ Our software generates your <strong>semester timetable</strong> and your <strong
 
 </div>
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          {/* Shimmer keyframes — scoped inline so no global CSS file needed */}
-          <style>{`
-            @keyframes shimmer-sweep {
-              0%   { background-position: 200% center; }
-              100% { background-position: -200% center; }
-            }
-          `}</style>
+<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+  {/* Shimmer keyframes — scoped inline so no global CSS file needed */}
+  <style>{`
+    @keyframes shimmer-sweep {
+      0%   { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+  `}</style>
 
-          <button
-            onClick={openDemoModal}
-            className="relative overflow-hidden rounded-full border border-slate-200/70 px-8 py-4 text-base font-semibold text-slate-50 hover:bg-slate-50 hover:text-slate-900 transition-colors"
-            style={{ isolation: 'isolate' }}
-          >
-            {/* Sweep shimmer light overlay */}
-            <span
-              aria-hidden="true"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                background:
-                  'linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.18) 50%, transparent 75%)',
-                backgroundSize: '200% 100%',
-                animation: 'shimmer-sweep 2.4s linear infinite',
-                borderRadius: 'inherit',
-                pointerEvents: 'none',
-              }}
-            />
-            Launch Free Demo
-          </button>
-        </div>
+  <button
+    onClick={() => window.open('https://forms.gle/TLkuHaP2EjaV35sg7', '_blank', 'noopener,noreferrer')}
+    className="relative overflow-hidden rounded-full border border-slate-200/70 px-8 py-4 text-base font-semibold text-slate-50 hover:bg-slate-50 hover:text-slate-900 transition-colors"
+    style={{ isolation: 'isolate' }}
+  >
+    {/* Sweep shimmer light overlay */}
+    <span
+      aria-hidden="true"
+      style={{
+        position: 'absolute',
+        inset: 0,
+        background:
+          'linear-gradient(110deg, transparent 25%, rgba(255,255,255,0.18) 50%, transparent 75%)',
+        backgroundSize: '200% 100%',
+        animation: 'shimmer-sweep 2.4s linear infinite',
+        borderRadius: 'inherit',
+        pointerEvents: 'none',
+      }}
+    />
+    Launch Free Demo
+  </button>
+</div>
 
         {/* CTA Buttons */}
         {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4"> */}

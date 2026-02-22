@@ -81,7 +81,8 @@ export default function Navigation() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <button
-              onClick={openDemoModal}
+              //onClick={openDemoModal}
+              onClick={() => window.open('https://forms.gle/TLkuHaP2EjaV35sg7', '_blank', 'noopener,noreferrer')}
               className="rounded-full border border-slate-300/80 px-4 py-2 text-sm font-medium text-slate-100 hover:bg-slate-100 hover:text-slate-900 transition-colors"
             >
               Launch Free Demo
