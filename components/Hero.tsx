@@ -5,9 +5,9 @@ import Logo from './Logo'
 //import QuoteModal from './QuoteModal'
 
 function TypewriterBadge() {
-  const BOLD = 'around 14 days'
-  const prefix = "We'll save your team "
-  const suffix = ' — so your staff can focus on teaching, not admin.'
+  const BOLD = 'and anyone who’s tired '
+  const prefix = "School leadership 💠 Admin teams 💠 Academic Teams 💠 Exams & Scheduling staff "
+  const suffix = 'of weeks lost to timetables.'
   const fullText = prefix + BOLD + suffix
 
   const boldStart = prefix.length
@@ -35,7 +35,7 @@ function TypewriterBadge() {
 
   return (
     <div className="rounded-full border border-amber-300/40 bg-amber-400/10 px-5 py-3 text-sm font-semibold text-amber-200 shadow-lg shadow-amber-500/10 text-center leading-relaxed min-h-[44px]">
-      🔥{' '}
+      {' '}
       {beforeBold}
       {inBold && <span className="font-bold">{inBold}</span>}
       {afterBold}
@@ -81,10 +81,10 @@ export default function Hero() {
         <TypewriterBadge/>
 
         {/* Logo */}
-        <Logo
+        {/* <Logo
           priority
           imageClassName="mx-auto mb-1 object-contain w-[140px] md:w-[190px] lg:w-[230px] xl:w-[260px]"
-        />
+        /> */}
 
         {/* Headline */}
         {/* <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight">
@@ -94,15 +94,16 @@ export default function Hero() {
   </span>
 </h1> */}
 <h1 className="mt-2 text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] tracking-tight">
-  Stop &ldquo;Building&rdquo; Timetables&hellip;{" "}
+  
   <span className="block mt-2 bg-gradient-to-r from-indigo-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent font-extrabold">
+  Stop &ldquo;Building&rdquo; Timetables&hellip;{" "}
     And Start Generating.
   </span>
   <span
     className="block mt-1 text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide"
     style={{
       fontFamily: "'Caveat', 'Segoe Script', cursive",
-      color: '#fca5a5',
+      color: 'white',
     }}
   >
     Takes seconds, not weeks.
@@ -111,7 +112,8 @@ export default function Hero() {
 
 {/* Sub-headline */}
 <div className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed">
-<p className="text-classify-gold font-extrabold">
+{/* <p className="text-classify-gold font-extrabold"> */}
+<p className="text-lg md:text-l mb-6 leading-relaxed">
 Our software generates your <strong>semester timetable</strong> and your <strong>exam timetable</strong> without conflicts using AI that optimizes rooms, teachers, cohorts, and workload rules in seconds.
   </p>
   {/* --<p className="text-classify-gold font-extrabold">
@@ -159,14 +161,14 @@ Our software generates your <strong>semester timetable</strong> and your <strong
         fontFamily: "'Caveat', 'Segoe Script', cursive",
         fontSize: '1.1rem',
         lineHeight: '1.4',
-        color: '#fca5a5',
+        color: 'white',//'#fca5a5',
         textAlign: 'center',
       }}
     >
-      Principal 💠<br />
+      {/* Principal 💠<br />
       Vice Principal 💠<br />
       Academic Director 💠<br />
-      Exams Officer 💠<br />
+      Exams Officer 💠<br /> */}
       Anyone involved in scheduling<br />
       watch this
     </p>
@@ -182,14 +184,14 @@ Our software generates your <strong>semester timetable</strong> and your <strong
     >
       <path
         d="M20 2 C20 20, 20 30, 20 42"
-        stroke="#fca5a5"
+        stroke="white"
         strokeWidth="2"
         strokeLinecap="round"
         fill="none"
       />
       <path
         d="M20 42 L12 32 M20 42 L28 32"
-        stroke="#fca5a5"
+        stroke="white"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -216,15 +218,15 @@ Our software generates your <strong>semester timetable</strong> and your <strong
         fontFamily: "'Caveat', 'Segoe Script', cursive",
         fontSize: '1.15rem',
         lineHeight: '1.35',
-        color: '#fca5a5',
+        color: 'white',
         textAlign: 'center',
         marginBottom: '4px',
       }}
     >
-      Principal 💠<br />
+      {/* Principal 💠<br />
       Vice Principal 💠<br />
       Academic Director 💠<br />
-      Exams Officer 💠<br />
+      Exams Officer 💠<br /> */}
       Anyone involved in scheduling<br />
       watch this
     </p>
@@ -240,14 +242,14 @@ Our software generates your <strong>semester timetable</strong> and your <strong
     >
       <path
         d="M20 5 C10 30, 15 55, 72 68"
-        stroke="#fca5a5"
+        stroke="white"
         strokeWidth="2"
         strokeLinecap="round"
         fill="none"
       />
       <path
         d="M72 68 L58 60 M72 68 L60 76"
-        stroke="#fca5a5"
+        stroke="white"
         strokeWidth="2"
         strokeLinecap="round"
       />
@@ -308,9 +310,14 @@ Our software generates your <strong>semester timetable</strong> and your <strong
         pointerEvents: 'none',
       }}
     />
-    Launch Free Demo
+    Be One of the 3 Schools
   </button>
+  
 </div>
+{/* <p className="text-classify-gold font-extrabold"> */}
+<p className="text-sm md:text-s mb-6 leading-relaxed">
+  3 Schools get the AI for free
+  </p>
 
         {/* CTA Buttons */}
         {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4"> */}

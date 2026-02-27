@@ -85,7 +85,7 @@ export default function Navigation() {
               onClick={() => window.open('https://forms.gle/TLkuHaP2EjaV35sg7', '_blank', 'noopener,noreferrer')}
               className="rounded-full border border-slate-300/80 px-4 py-2 text-sm font-medium text-slate-100 hover:bg-slate-100 hover:text-slate-900 transition-colors"
             >
-              Launch Free Demo
+              Be One of the 3 schools
             </button>
             {/* <button
               onClick={() => scrollToSection('pricing')}
@@ -123,31 +123,31 @@ export default function Navigation() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden pb-6 space-y-2 border-t border-slate-800/70">
-            <button
+            {/* <button
               onClick={() => scrollToSection('why')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               Why Classify
-            </button>
+            </button> */}
             {/* <button
               onClick={() => scrollToSection('how-it-works')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               How it works
             </button> */}
-            <button
+            {/* <button
               onClick={() => scrollToSection('features')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               Features
-            </button>
+            </button> */}
             {/* <button
               onClick={() => scrollToSection('pricing')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               Pricing
             </button> */}
-            <button
+            {/* <button
               onClick={() => scrollToSection('faq')}
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
@@ -158,13 +158,13 @@ export default function Navigation() {
               className="block w-full text-left px-4 py-2 text-slate-100 hover:bg-slate-800/60 rounded-lg"
             >
               Contact
-            </button>
+            </button> */}
             <div className="pt-4 space-y-2">
               <button
                 onClick={openDemoModal}
               className="block w-full rounded-full border border-slate-300/80 px-4 py-2 text-sm font-medium text-slate-100 hover:bg-slate-100 hover:text-slate-900 transition-colors"
               >
-                Launch Demo
+                Be One of the 3 Schools
               </button>
               {/* <button
                 onClick={() => scrollToSection('pricing')}
